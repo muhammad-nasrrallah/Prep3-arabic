@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>خطة مذاكرة العربي — الصف الثالث الإعدادي</title>
+  <title>مذكرة النماذج الاسترشادية للغة العربية — الصف الثالث الإعدادي</title>
 
-  <!-- Google Fonts: Reem Kufi (Headings), IBM Plex Sans Arabic (UI), Amiri (Passages & Poetry) -->
+  <!-- Open Graph Meta Tags for Clean Facebook & Social Media Sharing -->
+  <meta property="og:title" content="مذكرة النماذج الاسترشادية للغة العربية — الصف الثالث الإعدادي" />
+  <meta property="og:description" content="خطة مذاكرة تفاعلية شاملة ومجانية لطلاب الصف الثالث الإعدادي: قراءة، نصوص، نحو، تعبير وخط، اختبار تفاعلي شامل، وبطاقات مراجعة ملونة بدون أسئلة مكررة." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Mirza & Harmattan (Maghrebi/Andalusian Calligraphic Headings), Amiri (Passages & Poetry), IBM Plex Sans Arabic (Crisp UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Harmattan:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Mirza:wght@500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Phosphor Icons CDN (No emojis anywhere in UI) -->
+  <!-- Phosphor Icons CDN (Zero Emojis Anywhere in UI) -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <!-- Tailwind CSS CDN -->
@@ -20,28 +25,32 @@
       theme: {
         extend: {
           colors: {
-            paper: '#FFFDF8',
+            paper: '#FAF7F0',
+            parchment: '#FBF8F1',
             surface: '#FFFFFF',
-            borderWarm: '#E7E2D6',
-            ink: '#1B2236',
+            borderWarm: '#E6DFD1',
+            sandGold: '#CBB99B',
+            ink: '#1A2351',
+            bodyInk: '#1F2937',
             slateCalm: '#596377',
-            accent: '#1E5BFF',
-            accentSoft: '#EEF3FF',
-            amberAccent: '#D97706',
-            amberSoft: '#FEF7E6',
+            accent: '#2457D6',
+            accentSoft: '#EDF3FF',
             success: '#15803D',
             successSoft: '#ECFDF5',
+            amberAccent: '#B45309',
+            amberSoft: '#FEF5DC',
             danger: '#B91C1C',
             dangerSoft: '#FEF2F2',
           },
           fontFamily: {
-            heading: ['"Reem Kufi"', 'sans-serif'],
+            heading: ['"MaghrebiCustom"', '"Mirza"', '"Harmattan"', '"Amiri"', 'serif'],
             sans: ['"IBM Plex Sans Arabic"', 'sans-serif'],
             serifAr: ['"Amiri"', 'serif'],
           },
           boxShadow: {
-            calm: '0 2px 10px rgba(27, 34, 54, 0.04)',
-            calmHover: '0 6px 18px rgba(27, 34, 54, 0.07)',
+            calm: '0 2px 12px rgba(26, 35, 81, 0.045)',
+            calmHover: '0 8px 22px rgba(26, 35, 81, 0.085)',
+            cardFloat: '0 18px 36px rgba(26, 35, 81, 0.13)',
           }
         }
       }
@@ -49,38 +58,51 @@
   </script>
 
   <style>
-    /* Base typography and calm ergonomic defaults */
+    /* Optional Local Custom Maghrebi Font (auto-loads if user drops maghrebi.woff2 or maghrebi.ttf next to index.html) */
+    @font-face {
+      font-family: 'MaghrebiCustom';
+      src: url('./maghrebi.woff2') format('woff2'),
+           url('./maghrebi.ttf') format('truetype');
+      font-weight: 400 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Base Typography & Calm Ivory Ergonomics */
     html {
       scroll-behavior: smooth;
-      background-color: #FFFDF8;
-      color: #1B2236;
+      background-color: #FAF7F0;
+      color: #1A2351;
     }
 
     body {
       font-family: 'IBM Plex Sans Arabic', sans-serif;
-      background-color: #FFFDF8;
-      color: #1B2236;
+      background-color: #FAF7F0;
+      color: #1F2937;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
+    /* Maghrebi / Andalusian Calligraphic Heading Style */
     .font-heading {
-      font-family: 'Reem Kufi', sans-serif;
+      font-family: 'MaghrebiCustom', 'Mirza', 'Harmattan', 'Amiri', serif;
+      line-height: 1.42;
+      font-feature-settings: "liga" 1, "calt" 1;
     }
 
     .reading-passage {
       font-family: 'Amiri', serif;
-      line-height: 2.05;
-      font-size: 1.22rem;
+      line-height: 2.08;
+      font-size: 1.24rem;
     }
 
     .poetry-line {
       font-family: 'Amiri', serif;
-      line-height: 2.05;
-      font-size: 1.28rem;
+      line-height: 2.08;
+      font-size: 1.3rem;
     }
 
-    /* Hide scrollbar on horizontal pills while keeping scroll functional */
+    /* Hide scrollbar on horizontal filter strips while retaining swipe scroll */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -89,66 +111,195 @@
       scrollbar-width: none;
     }
 
-    /* 3D Flip Card Styles for Flashcards */
-    .flip-scene {
-      perspective: 1100px;
-    }
-    .flip-card {
+    /* ==================== DEDICATED ORNAMENTAL NOTEBOOK BANNER ==================== */
+    .notebook-title-frame {
+      background-color: #FBF8F1;
+      border: 1.5px solid #CBB99B;
+      box-shadow: 0 3px 16px rgba(26, 35, 81, 0.05);
       position: relative;
-      width: 100%;
-      min-height: 270px;
-      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      overflow: hidden;
+    }
+    .notebook-title-inner {
+      border: 1px solid #D9C9AE;
+      position: relative;
+    }
+
+    /* ==================== PROFESSIONAL 3D FLIP CARDS & SHEEN SWEEP ==================== */
+    .flip-scene {
+      perspective: 1200px;
+      position: relative;
+    }
+
+    .flip-lift-wrap {
       transform-style: preserve-3d;
+      will-change: transform;
+    }
+
+    @keyframes cardLiftBounce {
+      0%   { transform: translateY(0) scale(1); }
+      45%  { transform: translateY(-9px) scale(1.028); }
+      100% { transform: translateY(0) scale(1); }
+    }
+
+    .flip-lift-wrap.is-lifting {
+      animation: cardLiftBounce 0.68s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .flip-card {
+      display: grid;
+      width: 100%;
+      min-height: 334px;
+      transform-style: preserve-3d;
+      transition: transform 0.68s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
       cursor: pointer;
+      border-radius: 1.125rem;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      will-change: transform;
     }
+
+    .flip-card.grid-flip-card {
+      min-height: 274px;
+    }
+
     .flip-card.is-flipped {
-      transform: rotateY(180deg);
+      transform: rotateY(180deg) scale(1.015);
     }
+
+    .flip-lift-wrap.is-lifting .flip-card {
+      box-shadow: 0 20px 38px rgba(26, 35, 81, 0.13);
+    }
+
     .flip-face {
-      position: absolute;
-      inset: 0;
+      grid-area: 1 / 1;
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
+      border-radius: 1.125rem;
+      overflow: hidden;
+      position: relative;
     }
+
+    .flip-front {
+      transform: rotateY(0deg);
+    }
+
     .flip-back {
       transform: rotateY(180deg);
     }
 
+    /* Subtle light sheen sweeping across the card during rotation */
+    .flip-face::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(
+        112deg,
+        transparent 22%,
+        rgba(255, 255, 255, 0.48) 48%,
+        transparent 74%
+      );
+      transform: translateX(130%);
+      opacity: 0;
+    }
+
+    @keyframes sheenSweep {
+      0%   { transform: translateX(130%); opacity: 0; }
+      25%  { opacity: 0.9; }
+      100% { transform: translateX(-130%); opacity: 0; }
+    }
+
+    .flip-lift-wrap.is-lifting .flip-face::after {
+      animation: sheenSweep 0.68s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* Layered Colorful Peeking Cards Behind Active Deck Card */
+    .deck-stack-layer {
+      position: absolute;
+      inset: 0;
+      border-radius: 1.125rem;
+      pointer-events: none;
+      transition: transform 0.48s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+    }
+    .deck-stack-1 {
+      transform: translate(-10px, 10px) scale(0.965);
+      z-index: 1;
+    }
+    .deck-stack-2 {
+      transform: translate(-20px, 20px) scale(0.93);
+      z-index: 0;
+    }
+    .deck-stage-active {
+      position: relative;
+      z-index: 2;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .deck-nudge .deck-stack-1 {
+      transform: translate(-14px, 14px) scale(0.955);
+    }
+    .deck-nudge .deck-stack-2 {
+      transform: translate(-26px, 25px) scale(0.915);
+    }
+
+    /* Directional Card Slide Transitions */
+    @keyframes slideOutNext {
+      from { opacity: 1; transform: translateX(0) rotate(0deg); }
+      to   { opacity: 0; transform: translateX(-36px) rotate(-1.4deg); }
+    }
+    @keyframes slideOutPrev {
+      from { opacity: 1; transform: translateX(0) rotate(0deg); }
+      to   { opacity: 0; transform: translateX(36px) rotate(1.4deg); }
+    }
+    @keyframes slideInNext {
+      from { opacity: 0; transform: translateX(34px) scale(0.97); }
+      to   { opacity: 1; transform: translateX(0) scale(1); }
+    }
+    @keyframes slideInPrev {
+      from { opacity: 0; transform: translateX(-34px) scale(0.97); }
+      to   { opacity: 1; transform: translateX(0) scale(1); }
+    }
+
+    .anim-slide-out-next { animation: slideOutNext 0.17s ease-in forwards; }
+    .anim-slide-out-prev { animation: slideOutPrev 0.17s ease-in forwards; }
+    .anim-slide-in-next  { animation: slideInNext 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+    .anim-slide-in-prev  { animation: slideInPrev 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
     /* Smooth view entrance */
     @keyframes fadeSlideIn {
       from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .view-enter {
       animation: fadeSlideIn 0.24s ease-out;
     }
 
-    /* Focus visibility for accessibility */
-    button:focus-visible, textarea:focus-visible {
-      outline: 2px solid #1E5BFF;
+    /* Accessible Focus Rings */
+    button:focus-visible, textarea:focus-visible, [role="button"]:focus-visible {
+      outline: 2px solid #2457D6;
       outline-offset: 2px;
     }
   </style>
 </head>
-<body class="bg-paper text-ink min-h-screen pb-24 md:pb-12 selection:bg-accentSoft selection:text-accent">
+<body class="bg-paper text-bodyInk min-h-screen pb-24 md:pb-12 selection:bg-accentSoft selection:text-accent">
 
-  <!-- ==================== STICKY TOP HEADER (Height ~64px) ==================== -->
+  <!-- ==================== STICKY TOP HEADER (~64px) ==================== -->
   <header class="sticky top-0 z-40 h-16 bg-surface/95 backdrop-blur-sm border-b border-borderWarm">
-    <div class="max-w-[760px] mx-auto h-full px-4 flex items-center justify-between gap-3">
-      <!-- App Title -->
+    <div class="max-w-[780px] mx-auto h-full px-4 flex items-center justify-between gap-2.5">
+      <!-- Compact Notebook Title in Maghrebi Calligraphic Font -->
       <button onclick="switchView('plan')" class="flex items-center gap-2.5 text-right group min-w-0">
         <span class="w-9 h-9 rounded-xl bg-accentSoft text-accent flex items-center justify-center shrink-0 border border-accent/15">
           <i class="ph ph-book-open-text text-xl"></i>
         </span>
         <span class="font-heading text-lg sm:text-xl font-bold text-ink truncate">
-          خطة مذاكرة العربي — ٣ إعدادي
+          مذكرة النماذج الاسترشادية — ٣ إعدادي
         </span>
       </button>
 
-      <!-- Progress & Audio Controls -->
-      <div class="flex items-center gap-3 shrink-0">
+      <!-- Progress Bar & Audio Mute Toggle -->
+      <div class="flex items-center gap-2.5 sm:gap-3 shrink-0">
         <div class="flex items-center gap-2">
-          <div class="w-16 sm:w-24 h-2 bg-borderWarm/70 rounded-full overflow-hidden" aria-label="نسبة الإنجاز الكلية">
+          <div class="w-14 sm:w-24 h-2 bg-borderWarm/80 rounded-full overflow-hidden" aria-label="نسبة الإنجاز الكلية">
             <div id="header-progress-bar" class="h-full bg-accent rounded-full transition-all duration-300" style="width: 0%"></div>
           </div>
           <span id="header-progress-text" class="text-xs font-semibold text-slateCalm tabular-nums w-8 text-left">0%</span>
@@ -168,8 +319,8 @@
   </header>
 
   <!-- ==================== DESKTOP SEGMENTED NAVIGATION ==================== -->
-  <nav class="hidden md:block bg-paper border-b border-borderWarm/70 sticky top-16 z-30">
-    <div class="max-w-[760px] mx-auto px-4 py-2.5">
+  <nav class="hidden md:block bg-paper/95 backdrop-blur-sm border-b border-borderWarm/80 sticky top-16 z-30">
+    <div class="max-w-[780px] mx-auto px-4 py-2.5">
       <div class="grid grid-cols-4 gap-1.5 p-1 bg-surface border border-borderWarm rounded-2xl shadow-calm" role="tablist">
         <button data-nav="plan" onclick="switchView('plan')" class="desktop-nav-btn flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-sm font-semibold transition-colors">
           <i class="ph ph-map-trifold text-base"></i>
@@ -192,21 +343,21 @@
     </div>
   </nav>
 
-  <!-- ==================== MAIN CONTENT COLUMN (max-w 760px) ==================== -->
-  <main id="app-root" class="max-w-[760px] mx-auto px-4 pt-5 sm:pt-6">
+  <!-- ==================== MAIN CONTENT COLUMN ==================== -->
+  <main id="app-root" class="max-w-[780px] mx-auto px-4 pt-5 sm:pt-6">
     <!-- Dynamic view content rendered via JavaScript -->
   </main>
 
   <!-- ==================== MOBILE FIXED BOTTOM NAVIGATION ==================== -->
   <nav class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-surface border-t border-borderWarm shadow-calm" aria-label="التنقل الرئيسي">
-    <div class="grid grid-cols-4 h-16 max-w-[760px] mx-auto">
+    <div class="grid grid-cols-4 h-16 max-w-[780px] mx-auto">
       <button data-nav="plan" onclick="switchView('plan')" class="mobile-nav-btn flex flex-col items-center justify-center gap-1 min-h-[48px] text-xs font-medium transition-colors">
         <i class="ph ph-map-trifold text-xl"></i>
         <span>الخطة</span>
       </button>
       <button data-nav="station" onclick="switchView('station')" class="mobile-nav-btn flex flex-col items-center justify-center gap-1 min-h-[48px] text-xs font-medium transition-colors">
         <i class="ph ph-notebook text-xl"></i>
-        <span>المحطات</span>
+        <span>المحطة</span>
       </button>
       <button data-nav="quiz" onclick="switchView('quiz')" class="mobile-nav-btn flex flex-col items-center justify-center gap-1 min-h-[48px] text-xs font-medium transition-colors">
         <i class="ph ph-exam text-xl"></i>
@@ -231,7 +382,7 @@
   <!-- ==================== APPLICATION DATA & LOGIC ==================== -->
   <script>
     /* =========================================================================
-       1. COMPLETE DEDUPLICATED STUDY DATA (MODELS 1 & 2 — ZERO DUPLICATES)
+       1. COMPLETE DEDUPLICATED STUDY DATA (MODELS 1 & 2 — 48 UNIQUE QUESTIONS)
        ========================================================================= */
     const STATIONS = [
       {
@@ -1031,30 +1182,80 @@
     ];
 
     /* =========================================================================
-       2. FLASHCARDS DECK (VOCABULARY, LITERARY EXPRESSIONS & GRAMMAR)
+       2. 5 CALM PASTEL COLOR THEMES & 20 DEDUPLICATED FLASHCARDS
        ========================================================================= */
+    const FLASHCARD_THEMES = {
+      synonym: {
+        label: 'مرادف ومعنى',
+        bg: '#E6F4FE',
+        backBg: '#F2F9FF',
+        border: '#9AD0F5',
+        accent: '#0369A1',
+        darkText: '#0C4A6E',
+        icon: 'ph-book-open-text'
+      },
+      antonym: {
+        label: 'مضاد وتضاد',
+        bg: '#FFF0E8',
+        backBg: '#FFF7F2',
+        border: '#F5BFA3',
+        accent: '#C2410C',
+        darkText: '#7C2D12',
+        icon: 'ph-arrows-left-right'
+      },
+      morphology: {
+        label: 'مفرد وجمع',
+        bg: '#F3ECFF',
+        backBg: '#F9F5FF',
+        border: '#CBB2F6',
+        accent: '#6D28D9',
+        darkText: '#4C1D95',
+        icon: 'ph-squares-four'
+      },
+      rhetoric: {
+        label: 'جماليات ودلالة',
+        bg: '#FEF6DE',
+        backBg: '#FFFBF0',
+        border: '#ECCB78',
+        accent: '#B45309',
+        darkText: '#78350F',
+        icon: 'ph-sparkle'
+      },
+      grammar: {
+        label: 'نحو ومشتقات',
+        bg: '#E7F8EF',
+        backBg: '#F2FCF7',
+        border: '#9BD8B8',
+        accent: '#047857',
+        darkText: '#064E3B',
+        icon: 'ph-scales'
+      }
+    };
+
     const FLASHCARDS = [
-      { id: 'fc_1', category: 'مفردات', front: 'مرادف «التكدّس»', subtitle: 'درس: مستقبل مصر في الزراعة', back: 'الازدحام والتراكم', note: 'في سياق: تخفيف التكدس السكاني في الوادي والدلتا.' },
-      { id: 'fc_2', category: 'مفردات', front: 'المراد بـ «ملموسًا»', subtitle: 'درس: حرفتك بين يديك', back: 'ملحوظًا وظاهرًا في الواقع', note: 'تغيرت النظرة للتعليم الفني تغيرًا ملموسًا.' },
-      { id: 'fc_3', category: 'مفردات', front: 'مضاد «تمحيص»', subtitle: 'درس: أفضل النعم', back: 'سطحية (والتسرع دون تدقيق)', note: 'التمحيص هو التدقيق والفحص العميق للوصول إلى الحقيقة.' },
-      { id: 'fc_4', category: 'مفردات', front: 'دلالة وصف الأحكام بـ «مبتسرة»', subtitle: 'درس: أفضل النعم', back: 'التنفير من التسرع في إصدار أحكام ناقصة غير موضوعية', note: 'مبتسرة أي مقطوعة وناقصة لم تنضج.' },
-      { id: 'fc_5', category: 'مفردات', front: 'المراد بـ «الموثوقة»', subtitle: 'درس: أفضل النعم', back: 'المعتمدة الصحيحة', note: 'البحث عن الحقيقة من مصادرها الموثوقة.' },
-      { id: 'fc_6', category: 'مفردات', front: 'مفرد «خُلَصائه»', subtitle: 'نص: الصداقة', back: 'خَليص (على وزن فَعيل)', note: 'مثل: كُرَماء ← كَريم، خُلَصاء ← خَليص.' },
-      { id: 'fc_7', category: 'مفردات', front: 'مضاد «يسعفك»', subtitle: 'نص: الصداقة', back: 'يخذلك (ويتخلى عنك)', note: 'معنى يسعفك: يعينك وينجدك في الشدة.' },
-      { id: 'fc_8', category: 'مفردات', front: 'معنى «مآربه»', subtitle: 'نص: تاج الفضائل', back: 'حاجاته ومقاصده ومطالبه', note: 'مفردها: مأربة.' },
-      { id: 'fc_9', category: 'مفردات', front: 'معنى «التليد» ومضاده «الطريف»', subtitle: 'نص: اصنع بيدك مجدك', back: 'التليد: الأصيل الموروث — الطريف: الجديد المصنوع', note: 'بينهما تضاد يوضح المعنى ويؤكده.' },
-      { id: 'fc_10', category: 'مفردات', front: 'الجمال في «يزين الفتى صحة عقله»', subtitle: 'نص: تاج الفضائل', back: 'تصوير للعقل السليم بالزينة التي تُجمّل الإنسان', note: 'يدل على أثر العقل في رفع قدر صاحبه بين الناس.' },
-      { id: 'fc_11', category: 'نحو', front: 'اسم الفاعل من «يرى» في جملة مرفوعة', subtitle: 'اسم الفاعل من الثلاثي الناقص', back: 'المؤمن راءٍ أنوار الحق', note: 'تُحذف الياء ويعوّض عنها بتنوين الكسر لأنه نكرة مرفوعة غير مضافة.' },
-      { id: 'fc_12', category: 'نحو', front: 'اسم الزمان من «يعود»', subtitle: 'اسم الزمان من الثلاثي الأجوف', back: 'مَعاد (وقت الأصيل مَعاد الفلاحين)', note: 'يأتي من الأجوف (عاد) على وزن «مَفْعَل».' },
-      { id: 'fc_13', category: 'نحو', front: 'تصويب: «أنت مدعي إلى حفل التكريم»', subtitle: 'اسم المفعول من الناقص الواوي', back: 'أنت مَدْعُوّ إلى حفل التكريم', note: 'دعا ← يدعو ← مَدْعُوّ (إدغام واو مفعول في لام الكلمة).' },
-      { id: 'fc_14', category: 'نحو', front: 'تحويل «معطاء» إلى اسم فاعل', subtitle: 'اسم الفاعل من غير الثلاثي الناقص', back: 'الرجل مُعْطٍ الناسَ حقوقهم', note: 'الفعل أعطى ← يُعطي ← مُعْطٍ (حُذفت الياء لأنه نكرة مرفوعة).' },
-      { id: 'fc_15', category: 'نحو', front: 'نوع ووزن «مرآة» و«المِشرط»', subtitle: 'اسم الآلة المشتق القياسي', back: 'مرآة: مشتق على وزن مِفعَلة — مِشرط: مشتق على وزن مِفعَل', note: 'أصل «مرآة» مِرأية من الفعل (رأى).' },
-      { id: 'fc_16', category: 'نحو', front: 'فعل صيغة المبالغة «المِعوان»', subtitle: 'صيغ المبالغة من غير الثلاثي', back: 'أعان (فعل رباعي)', note: 'تأتي صيغ المبالغة غالبًا من الثلاثي وقليلًا من الرباعي مثل: أعان ← مِعوان، أعطى ← مِعطاء.' },
-      { id: 'fc_17', category: 'نحو', front: 'اسم الزمان والمكان من «وَعَدَ»', subtitle: 'اسم الزمان والمكان من المثال الواوي', back: 'مَوْعِد (على وزن مَفْعِل)', note: 'زمان: مَوْعِد الامتحان صباحًا | مكان: مَوْعِد اللقاء النادي.' },
-      { id: 'fc_18', category: 'نحو', front: 'إعراب «انطلاقًا» و«سهلًا» بعد الفعل «جعل»', subtitle: 'الأفعال التي تنصب مفعولين', back: 'مفعول به ثانٍ منصوب وعلامة نصبه الفتحة', note: 'اجعل مطلعَ (مفعول ١) اليوم انطلاقًا (مفعول ٢) / تجعل الصعبَ (مفعول ١) سهلًا (مفعول ٢).' }
+      { id: 'fc_1',  theme: 'synonym',    front: 'مرادف «التكدّس»', subtitle: 'درس: مستقبل مصر في الزراعة', back: 'الازدحام والتراكم', note: 'في سياق: تخفيف التكدس السكاني في الوادي والدلتا.' },
+      { id: 'fc_2',  theme: 'synonym',    front: 'المراد بـ «ملموسًا»', subtitle: 'درس: حرفتك بين يديك', back: 'ملحوظًا وظاهرًا في الواقع', note: 'تغيرت النظرة للتعليم الفني تغيرًا ملموسًا.' },
+      { id: 'fc_3',  theme: 'antonym',    front: 'مضاد «تمحيص»', subtitle: 'درس: أفضل النعم', back: 'سطحية (والتسرع دون تدقيق)', note: 'التمحيص هو التدقيق والفحص العميق للوصول إلى الحقيقة.' },
+      { id: 'fc_4',  theme: 'rhetoric',   front: 'دلالة وصف الأحكام بـ «مبتسرة»', subtitle: 'درس: أفضل النعم', back: 'التنفير من التسرع في إصدار أحكام ناقصة غير موضوعية', note: 'مبتسرة أي مقطوعة وناقصة لم تنضج.' },
+      { id: 'fc_5',  theme: 'synonym',    front: 'المراد بـ «الموثوقة»', subtitle: 'درس: أفضل النعم', back: 'المعتمدة الصحيحة', note: 'البحث عن الحقيقة من مصادرها الموثوقة.' },
+      { id: 'fc_6',  theme: 'morphology', front: 'مفرد «خُلَصائه»', subtitle: 'نص: الصداقة', back: 'خَليص (على وزن فَعيل)', note: 'مثل: كُرَماء ← كَريم، خُلَصاء ← خَليص.' },
+      { id: 'fc_7',  theme: 'antonym',    front: 'مضاد «يسعفك»', subtitle: 'نص: الصداقة', back: 'يخذلك (ويتخلى عنك)', note: 'معنى يسعفك: يعينك وينجدك في الشدة.' },
+      { id: 'fc_19', theme: 'rhetoric',   front: 'دلالة «غير مدخرين رأيًا سليمًا»', subtitle: 'نص: الصداقة', back: 'حرص الأصدقاء على تقديم النصيحة والرأي السديد دون بخل', note: 'نفي الادخار يؤكد الإخلاص وبذل أقصى النصح.' },
+      { id: 'fc_8',  theme: 'synonym',    front: 'معنى «مآربه»', subtitle: 'نص: تاج الفضائل', back: 'حاجاته ومقاصده ومطالبه', note: 'مفردها: مأربة.' },
+      { id: 'fc_9',  theme: 'antonym',    front: 'معنى «التليد» ومضاده «الطريف»', subtitle: 'نص: اصنع بيدك مجدك', back: 'التليد: الأصيل الموروث — الطريف: الجديد المصنوع', note: 'بينهما تضاد يوضح المعنى ويؤكده.' },
+      { id: 'fc_10', theme: 'rhetoric',   front: 'الجمال في «يزين الفتى صحة عقله»', subtitle: 'نص: تاج الفضائل', back: 'تصوير للعقل السليم بالزينة التي تُجمّل الإنسان', note: 'يدل على أثر العقل في رفع قدر صاحبه بين الناس.' },
+      { id: 'fc_20', theme: 'rhetoric',   front: 'غرض الاستفهام «وهل نسود بكون ماضينا سعيدًا؟»', subtitle: 'نص: اصنع بيدك مجدك', back: 'النفي', note: 'لا تتحقق السيادة بحاضر شقي اعتمادًا على ماضٍ سعيد فقط.' },
+      { id: 'fc_11', theme: 'grammar',    front: 'اسم الفاعل من «يرى» في جملة مرفوعة', subtitle: 'اسم الفاعل من الثلاثي الناقص', back: 'المؤمن راءٍ أنوار الحق', note: 'تُحذف الياء ويعوّض عنها بتنوين الكسر لأنه نكرة مرفوعة غير مضافة.' },
+      { id: 'fc_12', theme: 'grammar',    front: 'اسم الزمان من «يعود»', subtitle: 'اسم الزمان من الثلاثي الأجوف', back: 'مَعاد (وقت الأصيل مَعاد الفلاحين)', note: 'يأتي من الأجوف (عاد) على وزن «مَفْعَل».' },
+      { id: 'fc_13', theme: 'grammar',    front: 'تصويب: «أنت مدعي إلى حفل التكريم»', subtitle: 'اسم المفعول من الناقص الواوي', back: 'أنت مَدْعُوّ إلى حفل التكريم', note: 'دعا ← يدعو ← مَدْعُوّ (إدغام واو مفعول في لام الكلمة).' },
+      { id: 'fc_14', theme: 'grammar',    front: 'تحويل «معطاء» إلى اسم فاعل', subtitle: 'اسم الفاعل من غير الثلاثي الناقص', back: 'الرجل مُعْطٍ الناسَ حقوقهم', note: 'الفعل أعطى ← يُعطي ← مُعْطٍ (حُذفت الياء لأنه نكرة مرفوعة).' },
+      { id: 'fc_15', theme: 'grammar',    front: 'نوع ووزن «مرآة» و«المِشرط»', subtitle: 'اسم الآلة المشتق القياسي', back: 'مرآة: مشتق على وزن مِفعَلة — مِشرط: مشتق على وزن مِفعَل', note: 'أصل «مرآة» مِرأية من الفعل (رأى).' },
+      { id: 'fc_16', theme: 'grammar',    front: 'فعل صيغة المبالغة «المِعوان»', subtitle: 'صيغ المبالغة من غير الثلاثي', back: 'أعان (فعل رباعي)', note: 'تأتي صيغ المبالغة غالبًا من الثلاثي وقليلًا من الرباعي مثل: أعان ← مِعوان.' },
+      { id: 'fc_17', theme: 'grammar',    front: 'اسم الزمان والمكان من «وَعَدَ»', subtitle: 'اسم الزمان والمكان من المثال الواوي', back: 'مَوْعِد (على وزن مَفْعِل)', note: 'زمان: مَوْعِد الامتحان صباحًا | مكان: مَوْعِد اللقاء النادي.' },
+      { id: 'fc_18', theme: 'grammar',    front: 'إعراب «انطلاقًا» و«سهلًا» بعد الفعل «جعل»', subtitle: 'الأفعال التي تنصب مفعولين', back: 'مفعول به ثانٍ منصوب وعلامة نصبه الفتحة', note: 'اجعل مطلعَ (م١) اليوم انطلاقًا (م٢) / تجعل الصعبَ (م١) سهلًا (م٢).' }
     ];
 
-    /* Flatten helpers */
+    /* Flatten question pools for stats and Comprehensive Quiz */
     const ALL_QUESTIONS = [];
     const ALL_MCQS = [];
     STATIONS.forEach(station => {
@@ -1068,7 +1269,7 @@
     });
 
     /* =========================================================================
-       3. STATE MANAGEMENT & LOCALSTORAGE PERSISTENCE
+       3. STATE MANAGEMENT & LOCALSTORAGE PERSISTENCE (PRESERVED KEY)
        ========================================================================= */
     const STORAGE_KEY = 'prep3_arabic_study_plan_v1';
 
@@ -1093,10 +1294,19 @@
       confirmReset: false,
       grammarOpen: false,
       openWritingTopic: 'topic_1',
+      planPreviewCardIdx: 0,
       reviewSubTab: 'flashcards',   // 'flashcards' | 'bookmarks'
-      flashcardFilter: 'الكل',
+      flashcardMode: 'flip',        // 'flip' | 'grid'
+      flashcardFilter: 'all',       // 'all' | 'synonym' | 'antonym' | 'morphology' | 'rhetoric' | 'grammar' | 'review'
       flashcardIndex: 0,
       flashcardFlipped: false,
+      flashcardOrder: FLASHCARDS.map(c => c.id),
+      flippedGridCards: {},         // { fcId: boolean }
+      deckEnterAnim: '',
+      deckTransitionLock: false,
+      touchStartX: 0,
+      touchStartY: 0,
+      justSwiped: false,
       quiz: {
         branchFilter: 'الكل',
         instantMode: true,
@@ -1105,7 +1315,7 @@
         finished: false,
         questions: [],
         currentIndex: 0,
-        answers: {},     // { qId: optionIndex }
+        answers: {},
         secondsElapsed: 0,
         timerInterval: null
       }
@@ -1114,7 +1324,7 @@
     function loadState() {
       try {
         const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return structuredClone ? structuredClone(DEFAULT_STATE) : JSON.parse(JSON.stringify(DEFAULT_STATE));
+        if (!raw) return JSON.parse(JSON.stringify(DEFAULT_STATE));
         const parsed = JSON.parse(raw);
         return { ...JSON.parse(JSON.stringify(DEFAULT_STATE)), ...parsed };
       } catch (e) {
@@ -1126,13 +1336,13 @@
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       } catch (e) {
-        // Ignore storage quota errors gracefully
+        // Ignore storage errors gracefully
       }
       updateGlobalChrome();
     }
 
     /* =========================================================================
-       4. CALM WEB AUDIO API SYNTHESIZER (NO EXTERNAL FILES, TRIGGERED ON CLICK)
+       4. GENTLE WEB AUDIO API SYNTHESIZER (NO EXTERNAL FILES, TRIGGERED ON CLICK)
        ========================================================================= */
     let audioCtx = null;
 
@@ -1153,28 +1363,76 @@
       }
     }
 
-    // Soft pleasant chime on correct answer
+    // Soft realistic paper-flip whoosh & muted wooden click
+    function playFlipSound() {
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      try {
+        const now = ctx.currentTime;
+
+        // Filtered gentle paper rustle (70ms)
+        const bufferSize = Math.floor(ctx.sampleRate * 0.07);
+        const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+        const data = noiseBuffer.getChannelData(0);
+        for (let i = 0; i < bufferSize; i++) {
+          const env = Math.sin((i / bufferSize) * Math.PI);
+          data[i] = (Math.random() * 2 - 1) * env * 0.32;
+        }
+        const noise = ctx.createBufferSource();
+        noise.buffer = noiseBuffer;
+
+        const filter = ctx.createBiquadFilter();
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(1100, now);
+        filter.Q.setValueAtTime(1.1, now);
+
+        const noiseGain = ctx.createGain();
+        noiseGain.gain.setValueAtTime(0.055, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.07);
+
+        noise.connect(filter);
+        filter.connect(noiseGain);
+        noiseGain.connect(ctx.destination);
+        noise.start(now);
+
+        // Soft muted click
+        const osc = ctx.createOscillator();
+        const tickGain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(290, now);
+        osc.frequency.exponentialRampToValueAtTime(145, now + 0.045);
+        tickGain.gain.setValueAtTime(0.0001, now);
+        tickGain.gain.exponentialRampToValueAtTime(0.042, now + 0.008);
+        tickGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.052);
+        osc.connect(tickGain);
+        tickGain.connect(ctx.destination);
+        osc.start(now);
+        osc.stop(now + 0.058);
+      } catch (e) {}
+    }
+
+    // Pleasant chime on correct answer
     function playCorrectSound() {
       const ctx = getAudioCtx();
       if (!ctx) return;
       const now = ctx.currentTime;
-      const notes = [523.25, 659.25]; // C5 -> E5 gentle fifth/third
+      const notes = [523.25, 659.25];
       notes.forEach((freq, i) => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
         osc.type = 'sine';
         osc.frequency.setValueAtTime(freq, now + i * 0.09);
         gain.gain.setValueAtTime(0.0001, now + i * 0.09);
-        gain.gain.exponentialRampToValueAtTime(0.08, now + i * 0.09 + 0.02);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.09 + 0.35);
+        gain.gain.exponentialRampToValueAtTime(0.075, now + i * 0.09 + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.09 + 0.34);
         osc.connect(gain);
         gain.connect(ctx.destination);
         osc.start(now + i * 0.09);
-        osc.stop(now + i * 0.09 + 0.38);
+        osc.stop(now + i * 0.09 + 0.37);
       });
     }
 
-    // Gentle low wooden tap on wrong answer
+    // Gentle low tap on wrong answer
     function playWrongSound() {
       const ctx = getAudioCtx();
       if (!ctx) return;
@@ -1182,10 +1440,10 @@
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.type = 'triangle';
-      osc.frequency.setValueAtTime(195, now);
-      osc.frequency.exponentialRampToValueAtTime(135, now + 0.14);
+      osc.frequency.setValueAtTime(190, now);
+      osc.frequency.exponentialRampToValueAtTime(132, now + 0.14);
       gain.gain.setValueAtTime(0.0001, now);
-      gain.gain.exponentialRampToValueAtTime(0.09, now + 0.012);
+      gain.gain.exponentialRampToValueAtTime(0.085, now + 0.012);
       gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.18);
       osc.connect(gain);
       gain.connect(ctx.destination);
@@ -1193,12 +1451,12 @@
       osc.stop(now + 0.2);
     }
 
-    // Soft harp-like arpeggio chord on completing a station
+    // Soft arpeggio chord on completing a station or quiz
     function playCompleteSound() {
       const ctx = getAudioCtx();
       if (!ctx) return;
       const now = ctx.currentTime;
-      const chord = [392.0, 493.88, 587.33, 783.99]; // G major soft arpeggio
+      const chord = [392.0, 493.88, 587.33, 783.99];
       chord.forEach((freq, idx) => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();
@@ -1206,7 +1464,7 @@
         const start = now + idx * 0.08;
         osc.frequency.setValueAtTime(freq, start);
         gain.gain.setValueAtTime(0.0001, start);
-        gain.gain.exponentialRampToValueAtTime(0.065, start + 0.03);
+        gain.gain.exponentialRampToValueAtTime(0.06, start + 0.03);
         gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.65);
         osc.connect(gain);
         gain.connect(ctx.destination);
@@ -1222,8 +1480,96 @@
     }
 
     /* =========================================================================
-       5. HELPER CALCULATIONS & TOAST NOTIFICATION
+       5. MOROCCAN / ANDALUSIAN ORNAMENTAL SVGS & UTILITY HELPERS
        ========================================================================= */
+
+    /**
+     * Renders the symmetrical Andalusian/Moroccan arched floral-geometric side ornament
+     * matching the user-approved parchment banner preview (sage-teal, pale sky, warm sand).
+     */
+    function buildAndalusianSideOrnament(side = 'right') {
+      const flipTransform = side === 'left' ? 'transform: scaleX(-1);' : '';
+      const posClass = side === 'right' ? 'right-0' : 'left-0';
+      return `
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 112 180"
+          preserveAspectRatio="none"
+          class="pointer-events-none absolute top-0 bottom-0 ${posClass} h-full w-16 sm:w-28 opacity-90"
+          style="${flipTransform}"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <!-- Outer soft sage & sand border band -->
+          <rect x="0" y="0" width="112" height="180" fill="none" />
+          <!-- Top & Bottom scalloped geometric edge accents -->
+          <path d="M0 0 H92 C66 12, 54 34, 48 52 C38 72, 22 80, 12 90 C22 100, 38 108, 48 128 C54 146, 66 168, 92 180 H0 Z" fill="#F4EFE4" />
+          <!-- Delicate Moroccan lobed arch curve -->
+          <path d="M96 4 C72 10, 62 28, 56 46 C49 66, 36 78, 18 90 C36 102, 49 114, 56 134 C62 152, 72 170, 96 176" fill="none" stroke="#CBB99B" stroke-width="1.8" />
+          <path d="M104 9 C82 15, 71 31, 65 49 C58 68, 46 79, 28 90 C46 101, 58 112, 65 131 C71 149, 82 165, 104 171" fill="none" stroke="#D6C4A6" stroke-width="1" stroke-dasharray="3 2" />
+          <!-- Floral arabesque petals in pale sky, sage-teal & warm sand -->
+          <g fill="#D9ECEB" stroke="#9EC5C0" stroke-width="1">
+            <!-- Upper rosette -->
+            <path d="M22 24 C34 16, 46 22, 42 36 C30 42, 18 36, 22 24 Z" />
+            <path d="M12 46 C24 38, 36 46, 30 58 C18 62, 8 54, 12 46 Z" fill="#E8DFCE" stroke="#CBB99B" />
+            <!-- Center medallion -->
+            <ellipse cx="14" cy="90" rx="8" ry="12" fill="#D9ECEB" stroke="#9EC5C0" stroke-width="1.2" />
+            <circle cx="14" cy="90" r="3.5" fill="#9EC5C0" />
+            <!-- Lower rosette (mirrored) -->
+            <path d="M22 156 C34 164, 46 158, 42 144 C30 138, 18 144, 22 156 Z" />
+            <path d="M12 134 C24 142, 36 134, 30 122 C18 118, 8 126, 12 134 Z" fill="#E8DFCE" stroke="#CBB99B" />
+          </g>
+          <!-- Fine geometric vine curls -->
+          <path d="M4 18 Q28 18 42 42 M4 162 Q28 162 42 138 M6 68 Q22 72 28 84 M6 112 Q22 108 28 96" fill="none" stroke="#B7A384" stroke-width="1.1" opacity="0.7" />
+          <!-- Decorative corner diamond beads -->
+          <path d="M56 14 L62 19 L56 24 L50 19 Z" fill="#9EC5C0" opacity="0.65" />
+          <path d="M56 156 L62 161 L56 166 L50 161 Z" fill="#9EC5C0" opacity="0.65" />
+        </svg>
+      `;
+    }
+
+    /**
+     * Subtle Moroccan 8-point star watermark pattern for flashcards & subtle cards
+     */
+    function buildMoroccanWatermarkSvg(patternId, colorHex, opacity = '0.06') {
+      return `
+        <svg aria-hidden="true" class="pointer-events-none absolute inset-0 w-full h-full" style="color: ${colorHex}; opacity: ${opacity};" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="${patternId}" width="54" height="54" patternUnits="userSpaceOnUse">
+              <path d="M27 3 L51 27 L27 51 L3 27 Z" fill="none" stroke="currentColor" stroke-width="1.05" />
+              <rect x="11" y="11" width="32" height="32" fill="none" stroke="currentColor" stroke-width="0.95" />
+              <circle cx="27" cy="27" r="4.5" fill="none" stroke="currentColor" stroke-width="1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#${patternId})" />
+        </svg>
+      `;
+    }
+
+    function buildMoroccanCornerStar(colorHex, positionClass = 'bottom-2.5 left-2.5', opacity = '0.10') {
+      return `
+        <svg aria-hidden="true" viewBox="0 0 80 80" class="pointer-events-none absolute ${positionClass} w-20 h-20" style="color: ${colorHex}; opacity: ${opacity};" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 6 L74 40 L40 74 L6 40 Z" fill="none" stroke="currentColor" stroke-width="1.8" />
+          <rect x="16" y="16" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="40" cy="40" r="8" fill="none" stroke="currentColor" stroke-width="1.4" />
+          <circle cx="40" cy="40" r="3" fill="currentColor" />
+        </svg>
+      `;
+    }
+
+    function buildAndalusianDivider(colorHex = '#CBB99B') {
+      return `
+        <div class="flex items-center justify-center gap-2 my-1" aria-hidden="true">
+          <span class="h-[1.5px] w-10 rounded-full" style="background-color: ${colorHex}; opacity: 0.45;"></span>
+          <svg viewBox="0 0 28 12" class="w-7 h-3 shrink-0" style="color: ${colorHex}; opacity: 0.85;" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 1 L19 6 L14 11 L9 6 Z" fill="currentColor" />
+            <circle cx="4" cy="6" r="1.6" fill="currentColor" opacity="0.65" />
+            <circle cx="24" cy="6" r="1.6" fill="currentColor" opacity="0.65" />
+          </svg>
+          <span class="h-[1.5px] w-10 rounded-full" style="background-color: ${colorHex}; opacity: 0.45;"></span>
+        </div>
+      `;
+    }
+
     let toastTimer = null;
     function showToast(message, icon = 'ph-check-circle') {
       const container = document.getElementById('toast-container');
@@ -1241,6 +1587,11 @@
         container.classList.remove('opacity-100', 'translate-y-0');
         container.classList.add('opacity-0', 'translate-y-2');
       }, 2400);
+    }
+
+    function toArabicDigits(num) {
+      const digits = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
+      return String(num).replace(/\d/g, d => digits[Number(d)]);
     }
 
     function isQuestionSolved(q) {
@@ -1276,7 +1627,6 @@
       const totalQ = ALL_QUESTIONS.length;
       const solvedQ = ALL_QUESTIONS.filter(isQuestionSolved).length;
       const completedSt = state.completedStations.length;
-      // Weighted nicely: 70% questions solved + 30% stations marked completed
       const pct = Math.round(((solvedQ / totalQ) * 0.7 + (completedSt / STATIONS.length) * 0.3) * 100);
       return {
         totalQ,
@@ -1305,7 +1655,6 @@
       if (dDot) dDot.classList.toggle('hidden', !hasSaved);
       if (mDot) mDot.classList.toggle('hidden', !hasSaved);
 
-      // Update active nav styles
       document.querySelectorAll('.desktop-nav-btn').forEach(btn => {
         const active = btn.dataset.nav === state.currentView;
         btn.className = `desktop-nav-btn flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-sm font-semibold transition-colors relative ${
@@ -1328,6 +1677,9 @@
       state.currentView = viewName;
       if (options.stationId) {
         state.currentStationId = options.stationId;
+      }
+      if (options.reviewSubTab) {
+        uiState.reviewSubTab = options.reviewSubTab;
       }
       saveState();
       renderApp();
@@ -1352,92 +1704,175 @@
         { day: 3, label: 'اليوم الثالث', subtitle: 'النحو والتعبير والخط' }
       ];
 
+      // Sample card for the compact stacked flashcard preview widget
+      const previewSamples = [FLASHCARDS[0], FLASHCARDS[2], FLASHCARDS[5], FLASHCARDS[10], FLASHCARDS[12]];
+      const pIdx = uiState.planPreviewCardIdx % previewSamples.length;
+      const pCard = previewSamples[pIdx];
+      const pTheme = FLASHCARD_THEMES[pCard.theme];
+      const pNext1 = FLASHCARD_THEMES[previewSamples[(pIdx + 1) % previewSamples.length].theme];
+      const pNext2 = FLASHCARD_THEMES[previewSamples[(pIdx + 2) % previewSamples.length].theme];
+
       return `
         <div class="view-enter space-y-6">
-          <!-- Hero Overview Banner with Subtle Low-Opacity Geometric SVG Motif -->
-          <section class="relative overflow-hidden bg-surface border border-borderWarm rounded-2xl p-5 sm:p-7 shadow-calm">
-            <!-- Subtle Geometric SVG Motif (Opacity 0.04) -->
-            <svg aria-hidden="true" class="pointer-events-none absolute inset-0 w-full h-full opacity-[0.04] text-ink" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <pattern id="islamic-geo" width="60" height="60" patternUnits="userSpaceOnUse">
-                  <path d="M30 0 L60 30 L30 60 L0 30 Z M30 10 L50 30 L30 50 L10 30 Z" fill="none" stroke="currentColor" stroke-width="1.2"/>
-                  <circle cx="30" cy="30" r="4" fill="none" stroke="currentColor" stroke-width="1"/>
-                </pattern>
-              </defs>
-              <rect width="100%" height="100%" fill="url(#islamic-geo)" />
-            </svg>
+          <!-- ==================== DEDICATED ORNAMENTAL NOTEBOOK TITLE BANNER ==================== -->
+          <section class="notebook-title-frame rounded-2xl p-2 sm:p-2.5" aria-label="عنوان المذكرة">
+            <!-- Top & bottom delicate sage-teal beaded accent edge -->
+            <div class="notebook-title-inner rounded-xl px-4 sm:px-20 py-6 sm:py-8 text-center relative overflow-hidden">
+              ${buildAndalusianSideOrnament('right')}
+              ${buildAndalusianSideOrnament('left')}
 
-            <div class="relative z-10 space-y-5">
-              <div class="flex flex-wrap items-start justify-between gap-3">
-                <div>
-                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accentSoft text-accent text-xs font-semibold mb-2.5">
-                    <i class="ph ph-sparkle text-sm"></i>
-                    <span>الفصل الدراسي الأول ٢٠٢٦ / ٢٠٢٧</span>
+              <div class="relative z-10 space-y-2 max-w-xl mx-auto">
+                <h1 class="font-heading text-3xl sm:text-4xl font-bold text-ink leading-snug">
+                  مذكرة النماذج الاسترشادية للغة العربية
+                </h1>
+                <div class="font-heading text-xl sm:text-2xl font-bold text-ink/90">
+                  الصف الثالث الإعدادي
+                </div>
+                ${buildAndalusianDivider('#CBB99B')}
+                <div class="pt-0.5">
+                  <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-surface/90 border border-sandGold/60 text-xs font-semibold text-slateCalm">
+                    <i class="ph ph-seal-check text-sm text-accent"></i>
+                    <span>الفصل الدراسي الأول ٢٠٢٦ / ٢٠٢٧ — نسخة منقّحة بدون أسئلة مكررة</span>
                   </span>
-                  <h1 class="font-heading text-2xl sm:text-3xl font-bold text-ink leading-snug">
-                    خطة المذاكرة التفاعلية — اللغة العربية
-                  </h1>
-                  <p class="text-sm sm:text-base text-slateCalm mt-1.5 leading-relaxed">
-                    تمت مراجعة الملفات الخمسة المرفوعة وتصفيتها إلى <strong>نموذجين استرشاديين فريدين</strong> (${prog.totalQ} سؤالًا فريدًا + دليل التعبير والخط) بعد حذف جميع الأسئلة المكررة.
-                  </p>
                 </div>
-              </div>
-
-              <!-- Progress Bar -->
-              <div class="bg-paper border border-borderWarm rounded-xl p-4">
-                <div class="flex items-center justify-between text-sm mb-2">
-                  <span class="font-semibold text-ink">تقدّمك العام في الخطة</span>
-                  <span class="font-bold text-accent tabular-nums">${prog.percent}%</span>
-                </div>
-                <div class="w-full h-2.5 bg-borderWarm/80 rounded-full overflow-hidden">
-                  <div class="h-full bg-accent rounded-full transition-all duration-500" style="width: ${prog.percent}%"></div>
-                </div>
-
-                <!-- 3 Clean Stats -->
-                <div class="grid grid-cols-3 gap-2.5 mt-4 pt-3.5 border-t border-borderWarm/70 text-center">
-                  <div>
-                    <div class="text-lg sm:text-xl font-bold text-ink tabular-nums">${prog.completedSt} <span class="text-xs font-normal text-slateCalm">من ${prog.totalSt}</span></div>
-                    <div class="text-xs text-slateCalm mt-0.5">المحطات المنجزة</div>
-                  </div>
-                  <div class="border-x border-borderWarm/70">
-                    <div class="text-lg sm:text-xl font-bold text-ink tabular-nums">${prog.solvedQ} <span class="text-xs font-normal text-slateCalm">من ${prog.totalQ}</span></div>
-                    <div class="text-xs text-slateCalm mt-0.5">الأسئلة المحلولة</div>
-                  </div>
-                  <div>
-                    <div class="text-lg sm:text-xl font-bold text-amberAccent tabular-nums">${prog.savedCount}</div>
-                    <div class="text-xs text-slateCalm mt-0.5">محفوظ للمراجعة</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Primary Quick Action Buttons -->
-              <div class="flex flex-wrap items-center gap-2.5">
-                <button
-                  onclick="switchView('station', { stationId: state.currentStationId })"
-                  class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-accent text-surface text-sm font-semibold hover:opacity-95 transition-opacity min-h-[48px]"
-                >
-                  <i class="ph ph-play-circle text-lg"></i>
-                  <span>${prog.solvedQ > 0 ? 'متابعة المحطة الحالية' : 'ابدأ المحطة الأولى'}</span>
-                </button>
-                <button
-                  onclick="switchView('quiz')"
-                  class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-paper border border-borderWarm text-ink hover:bg-accentSoft hover:text-accent hover:border-accent/25 text-sm font-semibold transition-colors min-h-[48px]"
-                >
-                  <i class="ph ph-exam text-lg"></i>
-                  <span>الاختبار الشامل (${ALL_MCQS.length} سؤالًا)</span>
-                </button>
               </div>
             </div>
           </section>
 
-          <!-- 3-Day Study Plan Grid -->
+          <!-- ==================== OVERVIEW DASHBOARD & STACKED FLASHCARD PREVIEW ==================== -->
+          <section class="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+            <!-- Progress & Quick Start Card (7 columns on desktop) -->
+            <div class="md:col-span-7 bg-surface border border-borderWarm rounded-2xl p-5 shadow-calm flex flex-col justify-between gap-4">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <h2 class="font-heading text-2xl font-bold text-ink">خطة المذاكرة التفاعلية</h2>
+                  <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-accentSoft text-accent tabular-nums">${prog.percent}%</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slateCalm leading-relaxed">
+                  مقسّمة على ٣ أيام (٦ محطات) تشمل <strong>${toArabicDigits(prog.totalQ)} سؤالًا فريدًا</strong> مع الإجابات النموذجية والشرح، بالإضافة إلى الاختبار الشامل وبطاقات المراجعة.
+                </p>
+              </div>
+
+              <!-- Progress Bar + 3 Clean Stats -->
+              <div class="bg-paper border border-borderWarm rounded-xl p-3.5 space-y-3">
+                <div class="w-full h-2.5 bg-borderWarm/80 rounded-full overflow-hidden">
+                  <div class="h-full bg-accent rounded-full transition-all duration-500" style="width: ${prog.percent}%"></div>
+                </div>
+                <div class="grid grid-cols-3 gap-2 text-center">
+                  <div>
+                    <div class="text-base sm:text-lg font-bold text-ink tabular-nums">${prog.completedSt} <span class="text-[11px] font-normal text-slateCalm">من ${prog.totalSt}</span></div>
+                    <div class="text-[11px] text-slateCalm">المحطات المنجزة</div>
+                  </div>
+                  <div class="border-x border-borderWarm/80">
+                    <div class="text-base sm:text-lg font-bold text-ink tabular-nums">${prog.solvedQ} <span class="text-[11px] font-normal text-slateCalm">من ${prog.totalQ}</span></div>
+                    <div class="text-[11px] text-slateCalm">الأسئلة المحلولة</div>
+                  </div>
+                  <div>
+                    <div class="text-base sm:text-lg font-bold text-amberAccent tabular-nums">${prog.savedCount}</div>
+                    <div class="text-[11px] text-slateCalm">للمراجعة</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Primary Action Buttons -->
+              <div class="flex flex-wrap gap-2">
+                <button
+                  onclick="switchView('station', { stationId: state.currentStationId })"
+                  class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-accent text-surface text-xs sm:text-sm font-semibold hover:opacity-95 transition-opacity min-h-[46px]"
+                >
+                  <i class="ph ph-play-circle text-lg"></i>
+                  <span>${prog.solvedQ > 0 ? 'متابعة المحطة' : 'ابدأ المذاكرة'}</span>
+                </button>
+                <button
+                  onclick="switchView('quiz')"
+                  class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-paper border border-borderWarm text-ink hover:bg-accentSoft hover:text-accent hover:border-accent/25 text-xs sm:text-sm font-semibold transition-colors min-h-[46px]"
+                >
+                  <i class="ph ph-exam text-lg"></i>
+                  <span>الاختبار (${ALL_MCQS.length})</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Compact Layered Colorful Flashcard Preview Widget (5 columns on desktop) -->
+            <div class="md:col-span-5 bg-surface border border-borderWarm rounded-2xl p-5 shadow-calm flex flex-col justify-between gap-4">
+              <div class="flex items-center justify-between gap-2">
+                <h2 class="font-heading text-xl font-bold text-ink">بطاقات المراجعة</h2>
+                <span class="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-paper border border-borderWarm text-slateCalm">
+                  ${toArabicDigits(FLASHCARDS.length)} بطاقة ملونة
+                </span>
+              </div>
+
+              <!-- Peeking 3-Layer Pastel Card Stack -->
+              <div class="relative py-2 pl-4 pr-1">
+                <!-- Back Card Layer 2 -->
+                <div
+                  class="absolute inset-y-3 left-0 right-5 rounded-2xl transition-colors duration-300"
+                  style="background-color: ${pNext2.bg}; border: 1.5px solid ${pNext2.border}; transform: translateY(6px);"
+                ></div>
+                <!-- Middle Card Layer 1 -->
+                <div
+                  class="absolute inset-y-2.5 left-2 right-3 rounded-2xl transition-colors duration-300"
+                  style="background-color: ${pNext1.bg}; border: 1.5px solid ${pNext1.border}; transform: translateY(3px);"
+                ></div>
+
+                <!-- Active Front Mini Card -->
+                <div
+                  class="relative z-10 rounded-2xl p-4 shadow-calm transition-all duration-300 space-y-2.5"
+                  style="background-color: ${pTheme.bg}; border: 1.5px solid ${pTheme.border};"
+                >
+                  <div class="flex items-center justify-between gap-1.5">
+                    <span
+                      class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold text-surface"
+                      style="background-color: ${pTheme.accent};"
+                    >
+                      <i class="ph ${pTheme.icon} text-xs"></i>
+                      <span>${pTheme.label}</span>
+                    </span>
+                    <div class="flex items-center gap-1">
+                      <button
+                        onclick="stepPlanPreviewCard(-1)"
+                        class="w-7 h-7 rounded-lg bg-surface/90 border flex items-center justify-center hover:scale-105 transition-transform"
+                        style="border-color: ${pTheme.border}; color: ${pTheme.accent};"
+                        aria-label="البطاقة السابقة"
+                      >
+                        <i class="ph ph-caret-right text-sm"></i>
+                      </button>
+                      <button
+                        onclick="stepPlanPreviewCard(1)"
+                        class="w-7 h-7 rounded-lg bg-surface/90 border flex items-center justify-center hover:scale-105 transition-transform"
+                        style="border-color: ${pTheme.border}; color: ${pTheme.accent};"
+                        aria-label="البطاقة التالية"
+                      >
+                        <i class="ph ph-caret-left text-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="py-1 text-center">
+                    <div class="font-heading text-xl font-bold text-ink leading-snug">${pCard.front}</div>
+                    <div class="text-[11px] font-medium mt-0.5" style="color: ${pTheme.darkText};">${pCard.subtitle}</div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onclick="switchView('review', { reviewSubTab: 'flashcards' })"
+                class="w-full py-2.5 px-4 rounded-xl bg-accentSoft border border-accent/20 text-accent hover:bg-accent hover:text-surface text-xs sm:text-sm font-semibold transition-colors min-h-[44px] inline-flex items-center justify-center gap-2"
+              >
+                <i class="ph ph-cards text-base"></i>
+                <span>فتح بطاقات التقليب الملونة</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- ==================== 3-DAY STUDY PLAN GRID ==================== -->
           <section class="space-y-5">
-            <div class="flex items-center justify-between">
-              <h2 class="font-heading text-xl font-bold text-ink flex items-center gap-2">
-                <i class="ph ph-calendar-check text-accent text-xl"></i>
+            <div class="flex items-center justify-between gap-2">
+              <h2 class="font-heading text-2xl font-bold text-ink flex items-center gap-2">
+                <i class="ph ph-calendar-check text-accent text-xl shrink-0"></i>
                 <span>جدول المحطات على ٣ أيام</span>
               </h2>
-              <span class="text-xs font-medium text-slateCalm">اضغط على أي محطة للبدء</span>
+              <span class="text-xs font-medium text-slateCalm shrink-0">اضغط على أي محطة للبدء</span>
             </div>
 
             ${days.map(dayObj => {
@@ -1445,7 +1880,7 @@
               return `
                 <div class="space-y-3">
                   <div class="flex items-center gap-2.5">
-                    <span class="px-2.5 py-1 rounded-lg bg-ink text-surface text-xs font-semibold">${dayObj.label}</span>
+                    <span class="px-3 py-1 rounded-lg bg-ink text-surface text-xs font-semibold">${dayObj.label}</span>
                     <span class="text-sm font-semibold text-slateCalm">${dayObj.subtitle}</span>
                   </div>
 
@@ -1461,8 +1896,6 @@
                         badgeHtml = `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-paper border border-borderWarm text-slateCalm text-xs font-medium">لم تبدأ</span>`;
                       }
 
-                      const pct = stats.total > 0 ? Math.round((stats.solved / stats.total) * 100) : 0;
-
                       return `
                         <button
                           onclick="switchView('station', { stationId: ${st.id} })"
@@ -1477,15 +1910,15 @@
                             </div>
 
                             <div>
-                              <div class="text-xs font-semibold text-slateCalm">المحطة ${st.id}</div>
-                              <h3 class="font-heading text-lg font-bold text-ink group-hover:text-accent transition-colors mt-0.5">${st.title}</h3>
+                              <div class="text-xs font-semibold text-slateCalm">المحطة ${toArabicDigits(st.id)}</div>
+                              <h3 class="font-heading text-xl font-bold text-ink group-hover:text-accent transition-colors mt-0.5">${st.title}</h3>
                               <p class="text-xs text-slateCalm mt-1 leading-relaxed">${st.subtitle}</p>
                             </div>
                           </div>
 
                           <div class="w-full pt-3 border-t border-borderWarm/70 flex items-center justify-between text-xs">
                             <span class="text-slateCalm font-medium">
-                              ${stats.solved} / ${stats.total} أسئلة ${st.id === 6 ? '+ دليل التعبير والخط' : ''}
+                              ${toArabicDigits(stats.solved)} / ${toArabicDigits(stats.total)} أسئلة ${st.id === 6 ? '+ دليل التعبير والخط' : ''}
                             </span>
                             <span class="inline-flex items-center gap-1 text-accent font-semibold">
                               <span>فتح</span>
@@ -1519,6 +1952,12 @@
           </section>
         </div>
       `;
+    }
+
+    function stepPlanPreviewCard(delta) {
+      playFlipSound();
+      uiState.planPreviewCardIdx = (uiState.planPreviewCardIdx + delta + 5) % 5;
+      renderApp();
     }
 
     function toggleResetConfirm(val) {
@@ -1562,7 +2001,7 @@
                         : 'bg-surface text-slateCalm border-borderWarm hover:text-ink hover:border-ink/25'
                   }"
                 >
-                  ${done && !active ? '<i class="ph ph-check-circle text-sm"></i>' : `<span>${st.id}.</span>`}
+                  ${done && !active ? '<i class="ph ph-check-circle text-sm"></i>' : `<span>${toArabicDigits(st.id)}.</span>`}
                   <span>${st.shortTitle}</span>
                 </button>
               `;
@@ -1570,44 +2009,47 @@
           </div>
 
           <!-- Station Header Card -->
-          <div class="bg-surface border border-borderWarm rounded-2xl p-5 shadow-calm">
-            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-accentSoft text-accent text-xs font-semibold">
-                <i class="ph ${station.icon} text-sm"></i>
-                <span>${station.dayTitle} — المحطة ${station.id}</span>
-              </span>
-              <span class="text-xs font-semibold ${stats.isCompleted ? 'text-success' : 'text-slateCalm'}">
-                ${stats.solved} من ${stats.total} أسئلة مجابة
-              </span>
+          <div class="relative overflow-hidden bg-surface border border-borderWarm rounded-2xl p-5 shadow-calm">
+            ${buildMoroccanWatermarkSvg(`st-head-geo-${station.id}`, '#1A2351', '0.035')}
+            <div class="relative z-10">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-accentSoft text-accent text-xs font-semibold">
+                  <i class="ph ${station.icon} text-sm"></i>
+                  <span>${station.dayTitle} — المحطة ${toArabicDigits(station.id)}</span>
+                </span>
+                <span class="text-xs font-semibold ${stats.isCompleted ? 'text-success' : 'text-slateCalm'}">
+                  ${toArabicDigits(stats.solved)} من ${toArabicDigits(stats.total)} أسئلة مجابة
+                </span>
+              </div>
+              <h1 class="font-heading text-2xl sm:text-3xl font-bold text-ink">${station.title}</h1>
+              <p class="text-sm text-slateCalm mt-1">${station.subtitle}</p>
             </div>
-            <h1 class="font-heading text-2xl font-bold text-ink">${station.title}</h1>
-            <p class="text-sm text-slateCalm mt-1">${station.subtitle}</p>
           </div>
 
           <!-- Collapsible Grammar Cheat Sheet (Station 5 Only) -->
           ${station.grammarCheatSheet ? `
-            <div class="bg-amberSoft/60 border border-amberAccent/25 rounded-2xl overflow-hidden">
+            <div class="bg-amberSoft/70 border border-amberAccent/25 rounded-2xl overflow-hidden">
               <button
                 onclick="toggleGrammarSheet()"
                 class="w-full px-5 py-4 flex items-center justify-between gap-3 text-right min-h-[52px]"
               >
                 <div class="flex items-center gap-2.5">
-                  <span class="w-8 h-8 rounded-lg bg-amberSoft text-amberAccent flex items-center justify-center border border-amberAccent/20">
+                  <span class="w-8 h-8 rounded-lg bg-amberSoft text-amberAccent flex items-center justify-center border border-amberAccent/20 shrink-0">
                     <i class="ph ph-sparkle text-lg"></i>
                   </span>
                   <div>
-                    <div class="font-heading text-base font-bold text-ink">ملخص القواعد السريعة للنموذجين</div>
+                    <div class="font-heading text-lg font-bold text-ink">ملخص القواعد السريعة للنموذجين</div>
                     <div class="text-xs text-slateCalm">راجع قواعد المشتقات والإعراب المتكررة قبل الحل</div>
                   </div>
                 </div>
                 <i class="ph ${uiState.grammarOpen ? 'ph-caret-up' : 'ph-caret-down'} text-lg text-amberAccent shrink-0"></i>
               </button>
               ${uiState.grammarOpen ? `
-                <div class="px-5 pb-5 pt-1 grid grid-cols-1 sm:grid-cols-2 gap-3 border-t border-amberAccent/15">
+                <div class="px-5 pb-5 pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 border-t border-amberAccent/15">
                   ${station.grammarCheatSheet.map(item => `
                     <div class="bg-surface border border-borderWarm rounded-xl p-3.5">
                       <div class="text-xs font-bold text-accent mb-1">${item.title}</div>
-                      <p class="text-xs sm:text-sm text-ink leading-relaxed">${item.rule}</p>
+                      <p class="text-xs sm:text-sm text-bodyInk leading-relaxed">${item.rule}</p>
                     </div>
                   `).join('')}
                 </div>
@@ -1616,7 +2058,7 @@
           ` : ''}
 
           <!-- Station Sections (Passages / Poems + Questions) -->
-          ${station.sections.map((sec, secIdx) => `
+          ${station.sections.map(sec => `
             <section class="space-y-4">
               <!-- Source Material Box -->
               ${sec.type === 'passage' ? `
@@ -1625,7 +2067,7 @@
                     <i class="ph ph-article text-base"></i>
                     <span>${sec.label}</span>
                   </div>
-                  <p class="reading-passage text-ink text-justify">${sec.text}</p>
+                  <p class="reading-passage text-bodyInk text-justify">${sec.text}</p>
                 </div>
               ` : sec.type === 'poem' ? `
                 <div class="bg-surface border border-borderWarm rounded-2xl p-5 sm:p-6 shadow-calm">
@@ -1635,7 +2077,7 @@
                   </div>
                   <div class="space-y-3 py-1">
                     ${sec.verses.map(v => `
-                      <div class="poetry-line grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-6 text-ink bg-paper/70 border border-borderWarm/60 rounded-xl px-4 py-2.5">
+                      <div class="poetry-line grid grid-cols-1 sm:grid-cols-2 gap-1 sm:gap-6 text-ink bg-paper/80 border border-borderWarm/70 rounded-xl px-4 py-2.5">
                         <div class="text-right">${v[0]}</div>
                         <div class="text-left sm:text-right">${v[1]}</div>
                       </div>
@@ -1662,7 +2104,7 @@
           <!-- Complete Station Action Footer -->
           <div class="bg-surface border border-borderWarm rounded-2xl p-5 shadow-calm flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="text-center sm:text-right">
-              <div class="font-heading text-lg font-bold text-ink">
+              <div class="font-heading text-xl font-bold text-ink">
                 ${stats.isCompleted ? 'أتممت هذه المحطة بنجاح' : 'هل انتهيت من مراجعة هذه المحطة؟'}
               </div>
               <p class="text-xs text-slateCalm mt-0.5">
@@ -1706,7 +2148,7 @@
           <article id="q-card-${q.id}" class="bg-surface border border-borderWarm rounded-2xl p-4 sm:p-5 shadow-calm space-y-4">
             <div class="flex items-start justify-between gap-3">
               <div class="flex items-start gap-2.5">
-                <span class="w-7 h-7 rounded-lg bg-accentSoft text-accent text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${displayNum}</span>
+                <span class="w-7 h-7 rounded-lg bg-accentSoft text-accent text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${toArabicDigits(displayNum)}</span>
                 <h3 class="text-sm sm:text-base font-semibold text-ink leading-relaxed">${q.prompt}</h3>
               </div>
               <button
@@ -1726,7 +2168,7 @@
             <!-- Options Grid -->
             <div class="grid grid-cols-1 gap-2.5">
               ${q.options.map((opt, idx) => {
-                let btnStyle = 'bg-paper border-borderWarm text-ink hover:border-accent/50 hover:bg-accentSoft/40';
+                let btnStyle = 'bg-paper border-borderWarm text-bodyInk hover:border-accent/50 hover:bg-accentSoft/40';
                 let iconHtml = `<span class="w-7 h-7 rounded-lg bg-surface border border-borderWarm text-xs font-bold text-slateCalm flex items-center justify-center shrink-0">${arabicLetters[idx]}</span>`;
 
                 if (answered) {
@@ -1753,18 +2195,18 @@
               }).join('')}
             </div>
 
-            <!-- Instant Explanation & Calm Feedback -->
+            <!-- Instant Explanation -->
             ${answered ? `
               <div class="rounded-xl p-3.5 border text-sm leading-relaxed space-y-1 ${
                 isCorrect
-                  ? 'bg-successSoft/75 border-success/25 text-ink'
-                  : 'bg-dangerSoft/75 border-danger/25 text-ink'
+                  ? 'bg-successSoft/75 border-success/25 text-bodyInk'
+                  : 'bg-dangerSoft/75 border-danger/25 text-bodyInk'
               }">
                 <div class="font-bold flex items-center gap-1.5 ${isCorrect ? 'text-success' : 'text-danger'}">
                   <i class="ph ${isCorrect ? 'ph-check-circle' : 'ph-info'} text-base"></i>
                   <span>${isCorrect ? 'إجابة صحيحة — أحسنت التركيز' : 'حاول مراجعة الفكرة — إليك التوضيح الصحيح'}</span>
                 </div>
-                <p class="text-xs sm:text-sm text-ink/90">${q.explanation}</p>
+                <p class="text-xs sm:text-sm text-bodyInk/90">${q.explanation}</p>
               </div>
             ` : ''}
           </article>
@@ -1780,7 +2222,7 @@
         <article id="q-card-${q.id}" class="bg-surface border border-borderWarm rounded-2xl p-4 sm:p-5 shadow-calm space-y-4">
           <div class="flex items-start justify-between gap-3">
             <div class="flex items-start gap-2.5">
-              <span class="w-7 h-7 rounded-lg bg-amberSoft text-amberAccent text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${displayNum}</span>
+              <span class="w-7 h-7 rounded-lg bg-amberSoft text-amberAccent text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">${toArabicDigits(displayNum)}</span>
               <div class="space-y-1">
                 <span class="inline-block px-2 py-0.5 rounded-md bg-paper border border-borderWarm text-[11px] font-semibold text-slateCalm">${q.tag || 'مقالي'}</span>
                 <h3 class="text-sm sm:text-base font-semibold text-ink leading-relaxed">${q.prompt}</h3>
@@ -1800,15 +2242,13 @@
             </button>
           </div>
 
-          <!-- Optional Student Thinking / Answer Box -->
           <textarea
             rows="2"
             oninput="updateEssayDraft('${q.id}', this.value)"
             placeholder="اكتب إجابتك هنا للتدريب (اختياري) أو فكّر فيها قبل عرض الإجابة النموذجية..."
-            class="w-full rounded-xl bg-paper border border-borderWarm px-3.5 py-2.5 text-sm text-ink placeholder:text-slateCalm/70 resize-y focus:border-accent"
+            class="w-full rounded-xl bg-paper border border-borderWarm px-3.5 py-2.5 text-sm text-bodyInk placeholder:text-slateCalm/70 resize-y focus:border-accent"
           >${escapeHtml(draftText)}</textarea>
 
-          <!-- Toggle Reveal Model Answer -->
           <div class="flex flex-wrap items-center justify-between gap-2">
             <button
               onclick="toggleRevealEssay('${q.id}')"
@@ -1830,7 +2270,6 @@
             ` : ''}
           </div>
 
-          <!-- Revealed Official Model Answer + Self-Check Buttons -->
           ${isRevealed ? `
             <div class="rounded-xl bg-paper border border-accent/25 p-4 space-y-3.5">
               <div>
@@ -1838,7 +2277,7 @@
                   <i class="ph ph-seal-check text-sm"></i>
                   <span>الإجابة النموذجية</span>
                 </div>
-                <p class="text-sm text-ink leading-relaxed">${q.modelAnswer}</p>
+                <p class="text-sm text-bodyInk leading-relaxed">${q.modelAnswer}</p>
               </div>
 
               <div class="pt-3 border-t border-borderWarm flex flex-wrap items-center gap-2">
@@ -1886,9 +2325,9 @@
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               ${guides.functional.blueprint.map((b, idx) => `
-                <div class="bg-paper/70 border border-borderWarm rounded-xl p-3.5">
-                  <div class="text-xs font-bold text-accent mb-1">${idx + 1}. ${b.part}</div>
-                  <p class="text-xs sm:text-sm text-ink leading-relaxed">${b.example}</p>
+                <div class="bg-paper/75 border border-borderWarm rounded-xl p-3.5">
+                  <div class="text-xs font-bold text-accent mb-1">${toArabicDigits(idx + 1)}. ${b.part}</div>
+                  <p class="text-xs sm:text-sm text-bodyInk leading-relaxed">${b.example}</p>
                 </div>
               `).join('')}
             </div>
@@ -1897,8 +2336,8 @@
           <!-- 4 Persuasive Essay Topics Accordion -->
           <section class="space-y-3">
             <div class="flex items-center justify-between">
-              <h2 class="font-heading text-lg font-bold text-ink flex items-center gap-2">
-                <i class="ph ph-note-pencil text-accent text-xl"></i>
+              <h2 class="font-heading text-xl font-bold text-ink flex items-center gap-2">
+                <i class="ph ph-note-pencil text-accent text-xl shrink-0"></i>
                 <span>موضوعات النص الإقناعي الأربعة (١٥ – ٢٠ سطرًا)</span>
               </h2>
             </div>
@@ -1914,7 +2353,7 @@
                       class="w-full px-4 sm:px-5 py-4 flex items-center justify-between gap-3 text-right min-h-[54px] hover:bg-paper/60 transition-colors"
                     >
                       <div class="flex items-center gap-3 min-w-0">
-                        <span class="w-7 h-7 rounded-lg bg-accentSoft text-accent text-xs font-bold flex items-center justify-center shrink-0">${i + 1}</span>
+                        <span class="w-7 h-7 rounded-lg bg-accentSoft text-accent text-xs font-bold flex items-center justify-center shrink-0">${toArabicDigits(i + 1)}</span>
                         <div class="min-w-0">
                           <div class="text-sm font-bold text-ink">${t.title}</div>
                           <div class="text-[11px] text-slateCalm">${t.source}</div>
@@ -1927,11 +2366,11 @@
                       <div class="px-4 sm:px-5 pb-5 pt-2 border-t border-borderWarm/70 space-y-3 text-sm">
                         <div class="bg-paper rounded-xl p-3 border border-borderWarm/70">
                           <span class="text-xs font-bold text-accent block mb-1">المقدمة:</span>
-                          <p class="text-ink leading-relaxed">${t.intro}</p>
+                          <p class="text-bodyInk leading-relaxed">${t.intro}</p>
                         </div>
                         <div class="bg-paper rounded-xl p-3 border border-borderWarm/70">
                           <span class="text-xs font-bold text-accent block mb-1.5">أهم الحجج المنطقية:</span>
-                          <ul class="space-y-1.5 text-ink">
+                          <ul class="space-y-1.5 text-bodyInk">
                             ${t.arguments.map(arg => `
                               <li class="flex items-start gap-2">
                                 <i class="ph ph-check text-success text-sm mt-1 shrink-0"></i>
@@ -1941,13 +2380,13 @@
                           </ul>
                         </div>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          <div class="bg-amberSoft/50 rounded-xl p-3 border border-amberAccent/20">
+                          <div class="bg-amberSoft/60 rounded-xl p-3 border border-amberAccent/20">
                             <span class="text-xs font-bold text-amberAccent block mb-1">أمثلة واقعية:</span>
-                            <p class="text-xs sm:text-sm text-ink leading-relaxed">${t.examples}</p>
+                            <p class="text-xs sm:text-sm text-bodyInk leading-relaxed">${t.examples}</p>
                           </div>
-                          <div class="bg-successSoft/50 rounded-xl p-3 border border-success/20">
+                          <div class="bg-successSoft/60 rounded-xl p-3 border border-success/20">
                             <span class="text-xs font-bold text-success block mb-1">الخاتمة:</span>
-                            <p class="text-xs sm:text-sm text-ink leading-relaxed">${t.conclusion}</p>
+                            <p class="text-xs sm:text-sm text-bodyInk leading-relaxed">${t.conclusion}</p>
                           </div>
                         </div>
                       </div>
@@ -1960,8 +2399,8 @@
 
           <!-- Calligraphy & Dictation Card -->
           <section class="bg-surface border border-borderWarm rounded-2xl p-5 sm:p-6 shadow-calm space-y-4">
-            <div class="flex items-center gap-2 font-heading text-lg font-bold text-ink">
-              <i class="ph ph-pen-nib text-accent text-xl"></i>
+            <div class="flex items-center gap-2 font-heading text-xl font-bold text-ink">
+              <i class="ph ph-pen-nib text-accent text-xl shrink-0"></i>
               <span>نماذج الخط العربي ونصائح الإملاء</span>
             </div>
 
@@ -1982,7 +2421,7 @@
                 <i class="ph ph-lightbulb text-sm"></i>
                 <span>تنبيهات الإملاء (وصايا الحكماء)</span>
               </div>
-              <ul class="space-y-1.5 text-xs sm:text-sm text-ink">
+              <ul class="space-y-1.5 text-xs sm:text-sm text-bodyInk">
                 ${guides.dictationTips.map(tip => `
                   <li class="flex items-start gap-2">
                     <i class="ph ph-dot-outline text-accent text-base mt-0.5 shrink-0"></i>
@@ -2072,7 +2511,7 @@
       playCompleteSound();
       if (nextId) {
         state.currentStationId = nextId;
-        showToast(`أتممت المحطة ${stationId} — ننتقل إلى المحطة ${nextId}`, 'ph-check-circle');
+        showToast(`أتممت المحطة ${toArabicDigits(stationId)} — ننتقل إلى المحطة ${toArabicDigits(nextId)}`, 'ph-check-circle');
       } else {
         showToast('أتممت جميع المحطات بنجاح — أحسنت', 'ph-seal-check');
       }
@@ -2096,74 +2535,77 @@
 
         return `
           <div class="view-enter space-y-5">
-            <div class="bg-surface border border-borderWarm rounded-2xl p-5 sm:p-7 shadow-calm space-y-5">
-              <div>
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accentSoft text-accent text-xs font-semibold mb-2">
-                  <i class="ph ph-exam text-sm"></i>
-                  <span>تدريب شامل بدون أسئلة مكررة</span>
-                </span>
-                <h1 class="font-heading text-2xl font-bold text-ink">الاختبار الشامل التفاعلي</h1>
-                <p class="text-sm text-slateCalm mt-1 leading-relaxed">
-                  يجمع كل أسئلة الاختيار من متعدد الفريدة من النموذجين الاسترشاديين (${ALL_MCQS.length} سؤالًا). اختر الفرع والنمط المناسب لتركيزك.
-                </p>
-              </div>
-
-              <!-- Branch Filter Pills -->
-              <div class="space-y-2">
-                <label class="text-xs font-bold text-ink block">اختر الفرع:</label>
-                <div class="flex flex-wrap gap-2">
-                  ${branches.map(b => {
-                    const count = b === 'الكل' ? ALL_MCQS.length : ALL_MCQS.filter(q => q.branch === b).length;
-                    const active = qz.branchFilter === b;
-                    return `
-                      <button
-                        onclick="setQuizFilter('${b}')"
-                        class="px-3.5 py-2 rounded-xl text-xs font-semibold border transition-colors min-h-[42px] ${
-                          active
-                            ? 'bg-accent text-surface border-accent'
-                            : 'bg-paper text-slateCalm border-borderWarm hover:text-ink'
-                        }"
-                      >
-                        ${b} (${count})
-                      </button>
-                    `;
-                  }).join('')}
+            <div class="relative overflow-hidden bg-surface border border-borderWarm rounded-2xl p-5 sm:p-7 shadow-calm space-y-5">
+              ${buildMoroccanWatermarkSvg('quiz-head-geo', '#1A2351', '0.035')}
+              <div class="relative z-10 space-y-5">
+                <div>
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accentSoft text-accent text-xs font-semibold mb-2">
+                    <i class="ph ph-exam text-sm"></i>
+                    <span>تدريب شامل بدون أسئلة مكررة</span>
+                  </span>
+                  <h1 class="font-heading text-2xl sm:text-3xl font-bold text-ink">الاختبار الشامل التفاعلي</h1>
+                  <p class="text-sm text-slateCalm mt-1 leading-relaxed">
+                    يجمع كل أسئلة الاختيار من متعدد الفريدة من النموذجين الاسترشاديين (${toArabicDigits(ALL_MCQS.length)} سؤالًا). اختر الفرع والنمط المناسب لتركيزك.
+                  </p>
                 </div>
-              </div>
 
-              <!-- Mode & Timer Options -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-                <div class="bg-paper border border-borderWarm rounded-xl p-3.5 space-y-2">
-                  <div class="text-xs font-bold text-ink">نمط التصحيح</div>
-                  <div class="grid grid-cols-2 gap-1.5">
-                    <button onclick="setQuizOption('instantMode', true)" class="py-2 px-2.5 rounded-lg text-xs font-semibold border transition-colors ${qz.instantMode ? 'bg-accentSoft text-accent border-accent/30' : 'bg-surface text-slateCalm border-borderWarm'}">تصحيح فوري</button>
-                    <button onclick="setQuizOption('instantMode', false)" class="py-2 px-2.5 rounded-lg text-xs font-semibold border transition-colors ${!qz.instantMode ? 'bg-accentSoft text-accent border-accent/30' : 'bg-surface text-slateCalm border-borderWarm'}">في النهاية</button>
+                <!-- Branch Filter Pills -->
+                <div class="space-y-2">
+                  <label class="text-xs font-bold text-ink block">اختر الفرع:</label>
+                  <div class="flex flex-wrap gap-2">
+                    ${branches.map(b => {
+                      const count = b === 'الكل' ? ALL_MCQS.length : ALL_MCQS.filter(q => q.branch === b).length;
+                      const active = qz.branchFilter === b;
+                      return `
+                        <button
+                          onclick="setQuizFilter('${b}')"
+                          class="px-3.5 py-2 rounded-xl text-xs font-semibold border transition-colors min-h-[42px] ${
+                            active
+                              ? 'bg-accent text-surface border-accent'
+                              : 'bg-paper text-slateCalm border-borderWarm hover:text-ink'
+                          }"
+                        >
+                          ${b} (${toArabicDigits(count)})
+                        </button>
+                      `;
+                    }).join('')}
                   </div>
                 </div>
 
-                <div class="bg-paper border border-borderWarm rounded-xl p-3.5 space-y-2">
-                  <div class="text-xs font-bold text-ink">المؤقت الزمني</div>
-                  <div class="grid grid-cols-2 gap-1.5">
-                    <button onclick="setQuizOption('useTimer', false)" class="py-2 px-2.5 rounded-lg text-xs font-semibold border transition-colors ${!qz.useTimer ? 'bg-accentSoft text-accent border-accent/30' : 'bg-surface text-slateCalm border-borderWarm'}">بدون مؤقت</button>
-                    <button onclick="setQuizOption('useTimer', true)" class="py-2 px-2.5 rounded-lg text-xs font-semibold border transition-colors ${qz.useTimer ? 'bg-accentSoft text-accent border-accent/30' : 'bg-surface text-slateCalm border-borderWarm'}">تفعيل المؤقت</button>
+                <!-- Mode & Timer Options -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                  <div class="bg-paper border border-borderWarm rounded-xl p-3.5 space-y-2">
+                    <div class="text-xs font-bold text-ink">نمط التصحيح</div>
+                    <div class="grid grid-cols-2 gap-1.5">
+                      <button onclick="setQuizOption('instantMode', true)" class="py-2 px-2.5 rounded-lg text-xs font-semibold border transition-colors ${qz.instantMode ? 'bg-accentSoft text-accent border-accent/30' : 'bg-surface text-slateCalm border-borderWarm'}">تصحيح فوري</button>
+                      <button onclick="setQuizOption('instantMode', false)" class="py-2 px-2.5 rounded-lg text-xs font-semibold border transition-colors ${!qz.instantMode ? 'bg-accentSoft text-accent border-accent/30' : 'bg-surface text-slateCalm border-borderWarm'}">في النهاية</button>
+                    </div>
+                  </div>
+
+                  <div class="bg-paper border border-borderWarm rounded-xl p-3.5 space-y-2">
+                    <div class="text-xs font-bold text-ink">المؤقت الزمني</div>
+                    <div class="grid grid-cols-2 gap-1.5">
+                      <button onclick="setQuizOption('useTimer', false)" class="py-2 px-2.5 rounded-lg text-xs font-semibold border transition-colors ${!qz.useTimer ? 'bg-accentSoft text-accent border-accent/30' : 'bg-surface text-slateCalm border-borderWarm'}">بدون مؤقت</button>
+                      <button onclick="setQuizOption('useTimer', true)" class="py-2 px-2.5 rounded-lg text-xs font-semibold border transition-colors ${qz.useTimer ? 'bg-accentSoft text-accent border-accent/30' : 'bg-surface text-slateCalm border-borderWarm'}">تفعيل المؤقت</button>
+                    </div>
                   </div>
                 </div>
+
+                ${state.quizBestPercent !== null ? `
+                  <div class="flex items-center gap-2 text-xs text-success bg-successSoft/80 border border-success/20 rounded-xl px-3.5 py-2.5">
+                    <i class="ph ph-medal text-base"></i>
+                    <span>أعلى نتيجة حققتها سابقًا: <strong>${state.quizBestPercent}%</strong></span>
+                  </div>
+                ` : ''}
+
+                <button
+                  onclick="startQuiz()"
+                  class="w-full py-3.5 px-5 rounded-xl bg-accent text-surface text-sm font-bold hover:opacity-95 transition-opacity inline-flex items-center justify-center gap-2 min-h-[50px]"
+                >
+                  <i class="ph ph-play text-lg"></i>
+                  <span>ابدأ الاختبار الآن (${toArabicDigits(filteredCount)} سؤالًا)</span>
+                </button>
               </div>
-
-              ${state.quizBestPercent !== null ? `
-                <div class="flex items-center gap-2 text-xs text-success bg-successSoft/70 border border-success/20 rounded-xl px-3.5 py-2.5">
-                  <i class="ph ph-medal text-base"></i>
-                  <span>أعلى نتيجة حققتها سابقًا: <strong>${state.quizBestPercent}%</strong></span>
-                </div>
-              ` : ''}
-
-              <button
-                onclick="startQuiz()"
-                class="w-full py-3.5 px-5 rounded-xl bg-accent text-surface text-sm font-bold hover:opacity-95 transition-opacity inline-flex items-center justify-center gap-2 min-h-[50px]"
-              >
-                <i class="ph ph-play text-lg"></i>
-                <span>ابدأ الاختبار الآن (${filteredCount} سؤالًا)</span>
-              </button>
             </div>
           </div>
         `;
@@ -2196,7 +2638,7 @@
                 <i class="ph ${pct >= 80 ? 'ph-seal-check' : 'ph-chart-bar'} text-3xl"></i>
               </div>
               <div>
-                <h2 class="font-heading text-2xl font-bold text-ink">ملخص نتيجة الاختبار</h2>
+                <h2 class="font-heading text-2xl sm:text-3xl font-bold text-ink">ملخص نتيجة الاختبار</h2>
                 <p class="text-sm text-slateCalm mt-1">
                   ${pct >= 85 ? 'أداء متميز وتركيز عالٍ — أحسنت.' : pct >= 65 ? 'مستوى جيد جدًا، مراجعة الأخطاء سترفع نتيجتك للدرجة النهائية.' : 'بداية طيبة، راجع الأسئلة التي أخطأت فيها وجرّب مرة أخرى.'}
                 </p>
@@ -2247,7 +2689,7 @@
                     class="flex-1 sm:flex-none px-5 py-3 rounded-xl bg-amberAccent text-surface text-sm font-semibold hover:opacity-95 min-h-[48px] inline-flex items-center justify-center gap-2"
                   >
                     <i class="ph ph-arrows-clockwise text-base"></i>
-                    <span>إعادة التدريب على الأخطاء (${missedQuestions.length})</span>
+                    <span>إعادة التدريب على الأخطاء (${toArabicDigits(missedQuestions.length)})</span>
                   </button>
                 ` : ''}
                 <button
@@ -2262,11 +2704,11 @@
             <!-- Review Missed Questions List -->
             ${missedQuestions.length > 0 ? `
               <div class="space-y-3">
-                <h3 class="font-heading text-lg font-bold text-ink">مراجعة الأسئلة التي تحتاج تركيزًا</h3>
+                <h3 class="font-heading text-xl font-bold text-ink">مراجعة الأسئلة التي تحتاج تركيزًا</h3>
                 ${missedQuestions.map((q, idx) => `
                   <div class="bg-surface border border-borderWarm rounded-2xl p-4 shadow-calm space-y-2">
                     <div class="text-[11px] font-semibold text-slateCalm">${q.source}</div>
-                    <div class="text-sm font-bold text-ink">${idx + 1}. ${q.prompt}</div>
+                    <div class="text-sm font-bold text-ink">${toArabicDigits(idx + 1)}. ${q.prompt}</div>
                     <div class="text-xs text-danger">إجابتك: ${qz.answers[q.id] !== undefined ? q.options[qz.answers[q.id]] : 'لم تُجب'}</div>
                     <div class="text-xs font-semibold text-success">الإجابة الصحيحة: ${q.options[q.correctIndex]}</div>
                     <p class="text-xs text-slateCalm bg-paper rounded-lg p-2.5 border border-borderWarm/70">${q.explanation}</p>
@@ -2292,7 +2734,7 @@
           <!-- Quiz Top Status Bar -->
           <div class="bg-surface border border-borderWarm rounded-2xl p-4 shadow-calm space-y-2.5">
             <div class="flex items-center justify-between gap-2 text-xs font-semibold">
-              <span class="text-ink">السؤال ${qz.currentIndex + 1} من ${qz.questions.length}</span>
+              <span class="text-ink">السؤال ${toArabicDigits(qz.currentIndex + 1)} من ${toArabicDigits(qz.questions.length)}</span>
               <div class="flex items-center gap-3">
                 ${qz.useTimer ? `<span id="quiz-timer-display" class="inline-flex items-center gap-1 text-accent tabular-nums"><i class="ph ph-timer text-sm"></i> ${formatTime(qz.secondsElapsed)}</span>` : ''}
                 <button onclick="resetQuizToSetup()" class="text-slateCalm hover:text-danger">إنهاء</button>
@@ -2314,7 +2756,7 @@
 
             <div class="space-y-2.5">
               ${q.options.map((opt, idx) => {
-                let cls = 'bg-paper border-borderWarm text-ink hover:border-accent/50';
+                let cls = 'bg-paper border-borderWarm text-bodyInk hover:border-accent/50';
                 let badge = `<span class="w-7 h-7 rounded-lg bg-surface border border-borderWarm text-xs font-bold text-slateCalm flex items-center justify-center shrink-0">${arabicLetters[idx]}</span>`;
 
                 if (showValidation) {
@@ -2350,7 +2792,7 @@
                   <i class="ph ${isCorrect ? 'ph-check-circle' : 'ph-info'} text-base"></i>
                   <span>${isCorrect ? 'إجابة صحيحة — أحسنت التركيز' : 'إجابة غير دقيقة — راجع التوضيح أدناه'}</span>
                 </div>
-                <p class="text-xs sm:text-sm text-ink">${q.explanation}</p>
+                <p class="text-xs sm:text-sm text-bodyInk">${q.explanation}</p>
               </div>
             ` : ''}
 
@@ -2426,7 +2868,7 @@
 
     function selectQuizAnswer(qId, idx) {
       const qz = uiState.quiz;
-      if (qz.instantMode && qz.answers[qId] !== undefined) return; // Lock after instant check
+      if (qz.instantMode && qz.answers[qId] !== undefined) return;
       qz.answers[qId] = idx;
       const q = qz.questions.find(item => item.id === qId);
       if (qz.instantMode && q) {
@@ -2491,7 +2933,7 @@
     }
 
     /* =========================================================================
-       9. VIEW 4: FLASHCARDS & BOOKMARKED ITEMS (بطاقات المراجعة)
+       9. VIEW 4: COLORFUL 3D FLASHCARDS (DECK & GRID) + BOOKMARKS
        ========================================================================= */
     function renderReviewView() {
       const savedIds = getSavedReviewIds();
@@ -2516,7 +2958,7 @@
               }"
             >
               <i class="ph ph-bookmark-simple text-base"></i>
-              <span>الأسئلة المحفوظة (${savedIds.length})</span>
+              <span>الأسئلة المحفوظة (${toArabicDigits(savedIds.length)})</span>
             </button>
           </div>
 
@@ -2525,133 +2967,560 @@
       `;
     }
 
+    function getOrderedFlashcards() {
+      const map = new Map(FLASHCARDS.map(c => [c.id, c]));
+      const ordered = uiState.flashcardOrder.map(id => map.get(id)).filter(Boolean);
+      FLASHCARDS.forEach(c => {
+        if (!ordered.includes(c)) ordered.push(c);
+      });
+      return ordered;
+    }
+
     function getFilteredFlashcards() {
-      if (uiState.flashcardFilter === 'الكل') return FLASHCARDS;
-      if (uiState.flashcardFilter === 'للمراجعة') {
-        const rev = FLASHCARDS.filter(c => state.flashcardStatus[c.id] === 'review');
-        return rev.length > 0 ? rev : [];
+      const ordered = getOrderedFlashcards();
+      if (uiState.flashcardFilter === 'all') return ordered;
+      if (uiState.flashcardFilter === 'review') {
+        return ordered.filter(c => state.flashcardStatus[c.id] === 'review');
       }
-      return FLASHCARDS.filter(c => c.category === uiState.flashcardFilter);
+      return ordered.filter(c => c.theme === uiState.flashcardFilter);
+    }
+
+    function getFilterCount(filterKey) {
+      if (filterKey === 'all') return FLASHCARDS.length;
+      if (filterKey === 'review') return FLASHCARDS.filter(c => state.flashcardStatus[c.id] === 'review').length;
+      return FLASHCARDS.filter(c => c.theme === filterKey).length;
     }
 
     function renderFlashcardsPanel() {
       const cards = getFilteredFlashcards();
-      const filters = ['الكل', 'مفردات', 'نحو', 'للمراجعة'];
       const knownCount = FLASHCARDS.filter(c => state.flashcardStatus[c.id] === 'known').length;
+      const reviewCount = FLASHCARDS.filter(c => state.flashcardStatus[c.id] === 'review').length;
+      const masteredPct = Math.round((knownCount / FLASHCARDS.length) * 100);
 
       if (uiState.flashcardIndex >= cards.length) uiState.flashcardIndex = 0;
-      const card = cards[uiState.flashcardIndex];
+
+      const filterDefs = [
+        { key: 'all',        label: 'الكل',                           dot: '#1A2351' },
+        { key: 'synonym',    label: FLASHCARD_THEMES.synonym.label,    dot: FLASHCARD_THEMES.synonym.accent },
+        { key: 'antonym',    label: FLASHCARD_THEMES.antonym.label,    dot: FLASHCARD_THEMES.antonym.accent },
+        { key: 'morphology', label: FLASHCARD_THEMES.morphology.label, dot: FLASHCARD_THEMES.morphology.accent },
+        { key: 'rhetoric',   label: FLASHCARD_THEMES.rhetoric.label,   dot: FLASHCARD_THEMES.rhetoric.accent },
+        { key: 'grammar',    label: FLASHCARD_THEMES.grammar.label,    dot: FLASHCARD_THEMES.grammar.accent },
+        { key: 'review',     label: 'للمراجعة',                       dot: '#C2410C' }
+      ];
 
       return `
         <div class="space-y-4">
-          <!-- Category Filter + Known Counter -->
-          <div class="flex flex-wrap items-center justify-between gap-2">
-            <div class="flex flex-wrap gap-1.5">
-              ${filters.map(f => `
+          <!-- Flashcards Control Header -->
+          <div class="bg-surface border border-borderWarm rounded-2xl p-4 shadow-calm space-y-3.5">
+            <!-- Title + Mode Toggle -->
+            <div class="flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <h2 class="font-heading text-2xl font-bold text-ink">بطاقات المعاني والمفردات والقواعد</h2>
+                <p id="fc-mastery-summary" class="text-xs text-slateCalm mt-0.5">
+                  حفظت <strong class="text-success">${toArabicDigits(knownCount)}</strong> من ${toArabicDigits(FLASHCARDS.length)} بطاقة
+                  ${reviewCount > 0 ? ` • <strong class="text-amberAccent">${toArabicDigits(reviewCount)}</strong> للمراجعة` : ''}
+                </p>
+              </div>
+
+              <!-- Seamless Toggle: 3D Deck Mode vs Colorful Grid Mode -->
+              <div class="inline-flex p-1 bg-paper border border-borderWarm rounded-xl shrink-0" role="group" aria-label="تبديل نمط عرض البطاقات">
                 <button
-                  onclick="setFlashcardFilter('${f}')"
-                  class="px-3 py-1.5 rounded-xl text-xs font-semibold border transition-colors min-h-[36px] ${
-                    uiState.flashcardFilter === f
-                      ? 'bg-ink text-surface border-ink'
-                      : 'bg-surface text-slateCalm border-borderWarm hover:text-ink'
+                  onclick="setFlashcardMode('flip')"
+                  class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors min-h-[38px] ${
+                    uiState.flashcardMode === 'flip'
+                      ? 'bg-accent text-surface'
+                      : 'text-slateCalm hover:text-ink'
                   }"
-                >${f}</button>
-              `).join('')}
+                >
+                  <i class="ph ph-cards text-sm"></i>
+                  <span>وضع التقليب</span>
+                </button>
+                <button
+                  onclick="setFlashcardMode('grid')"
+                  class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-colors min-h-[38px] ${
+                    uiState.flashcardMode === 'grid'
+                      ? 'bg-accent text-surface'
+                      : 'text-slateCalm hover:text-ink'
+                  }"
+                >
+                  <i class="ph ph-squares-four text-sm"></i>
+                  <span>الشبكة الملونة</span>
+                </button>
+              </div>
             </div>
-            <span class="text-xs font-semibold text-success">حفظت ${knownCount} من ${FLASHCARDS.length}</span>
+
+            <!-- Category Filter Pills with Colored Dots & Counts -->
+            <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-0.5 pt-2.5 border-t border-borderWarm/70">
+              ${filterDefs.map(f => {
+                const cnt = getFilterCount(f.key);
+                const active = uiState.flashcardFilter === f.key;
+                const theme = FLASHCARD_THEMES[f.key];
+                const activeBg = active ? (theme ? theme.accent : '#1A2351') : '#FAF7F0';
+                const activeBorder = active ? (theme ? theme.accent : '#1A2351') : '#E6DFD1';
+                return `
+                  <button
+                    onclick="setFlashcardFilter('${f.key}')"
+                    class="shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold border transition-colors min-h-[38px] inline-flex items-center gap-1.5"
+                    style="background-color: ${activeBg}; border-color: ${activeBorder}; color: ${active ? '#FFFFFF' : '#1A2351'};"
+                  >
+                    <span class="w-2 h-2 rounded-full shrink-0" style="background-color: ${active ? '#FFFFFF' : f.dot};"></span>
+                    <span>${f.label}</span>
+                    <span class="px-1.5 py-0.5 rounded-md text-[10px] font-bold" style="background-color: ${active ? 'rgba(255,255,255,0.22)' : '#FFFFFF'}; color: ${active ? '#FFFFFF' : '#596377'}; border: ${active ? 'none' : '1px solid #E6DFD1'};">
+                      ${toArabicDigits(cnt)}
+                    </span>
+                  </button>
+                `;
+              }).join('')}
+            </div>
+
+            ${uiState.flashcardMode === 'grid' && cards.length > 0 ? `
+              <div class="flex items-center justify-between pt-2 border-t border-borderWarm/60 text-xs">
+                <span class="text-slateCalm">اضغط على أي بطاقة لتقليبها بحركة ثلاثية الأبعاد</span>
+                <button
+                  id="grid-flip-all-btn"
+                  onclick="toggleAllGridCards()"
+                  class="font-semibold text-accent hover:underline inline-flex items-center gap-1.5 py-1"
+                >
+                  <i class="ph ph-arrows-clockwise text-sm"></i>
+                  <span>${areAllGridCardsFlipped(cards) ? 'إعادة كل البطاقات' : 'قلب كل البطاقات'}</span>
+                </button>
+              </div>
+            ` : ''}
           </div>
 
           ${cards.length === 0 ? `
-            <div class="bg-surface border border-borderWarm rounded-2xl p-8 text-center space-y-2 shadow-calm">
-              <i class="ph ph-check-circle text-3xl text-success"></i>
-              <div class="font-heading text-lg font-bold text-ink">لا توجد بطاقات مؤجلة للمراجعة</div>
-              <p class="text-xs text-slateCalm">يمكنك العودة لعرض كل البطاقات لتثبيت الحفظ.</p>
-              <button onclick="setFlashcardFilter('الكل')" class="mt-2 px-4 py-2 rounded-xl bg-accentSoft text-accent text-xs font-semibold">عرض كل البطاقات</button>
-            </div>
-          ` : `
-            <!-- 3D Interactive Flip Card -->
-            <div class="flip-scene">
-              <div
-                onclick="flipCurrentCard()"
-                role="button"
-                tabindex="0"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flipCurrentCard();}"
-                class="flip-card ${uiState.flashcardFlipped ? 'is-flipped' : ''}"
-                aria-label="اضغط لقلب البطاقة"
-              >
-                <!-- Front Face -->
-                <div class="flip-face bg-surface border border-borderWarm rounded-2xl p-6 shadow-calm flex flex-col justify-between">
-                  <div class="flex items-center justify-between text-xs">
-                    <span class="px-2.5 py-1 rounded-lg bg-accentSoft text-accent font-semibold">${card.category}</span>
-                    <span class="text-slateCalm tabular-nums">${uiState.flashcardIndex + 1} / ${cards.length}</span>
-                  </div>
-                  <div class="text-center py-6 space-y-2">
-                    <div class="font-heading text-2xl sm:text-3xl font-bold text-ink leading-snug">${card.front}</div>
-                    <div class="text-xs text-slateCalm">${card.subtitle}</div>
-                  </div>
-                  <div class="text-center text-xs font-medium text-accent flex items-center justify-center gap-1.5">
-                    <i class="ph ph-arrows-clockwise text-sm"></i>
-                    <span>اضغط لقلب البطاقة وعرض الإجابة</span>
-                  </div>
-                </div>
-
-                <!-- Back Face -->
-                <div class="flip-face flip-back bg-paper border-2 border-accent/35 rounded-2xl p-6 shadow-calm flex flex-col justify-between">
-                  <div class="flex items-center justify-between text-xs">
-                    <span class="px-2.5 py-1 rounded-lg bg-successSoft text-success font-semibold">الإجابة النموذجية</span>
-                    <span class="text-slateCalm">${card.subtitle}</span>
-                  </div>
-                  <div class="text-center py-5 space-y-3">
-                    <div class="font-serifAr text-2xl sm:text-3xl font-bold text-ink leading-relaxed">${card.back}</div>
-                    <p class="text-xs sm:text-sm text-slateCalm bg-surface border border-borderWarm rounded-xl px-3.5 py-2.5 inline-block">${card.note}</p>
-                  </div>
-                  <div class="text-center text-xs text-slateCalm">اضغط للعودة إلى وجه البطاقة</div>
-                </div>
+            <div class="bg-surface border border-borderWarm rounded-2xl p-8 text-center space-y-2.5 shadow-calm">
+              <div class="w-12 h-12 mx-auto rounded-2xl bg-successSoft text-success flex items-center justify-center">
+                <i class="ph ph-check-circle text-2xl"></i>
               </div>
+              <div class="font-heading text-2xl font-bold text-ink">لا توجد بطاقات مؤجلة للمراجعة</div>
+              <p class="text-xs sm:text-sm text-slateCalm">يمكنك العودة لعرض كل البطاقات لتثبيت الحفظ.</p>
+              <button onclick="setFlashcardFilter('all')" class="mt-2 px-4 py-2.5 rounded-xl bg-accentSoft text-accent text-xs font-semibold min-h-[40px]">عرض كل البطاقات</button>
             </div>
-
-            <!-- Self Evaluation & Navigation Controls -->
-            <div class="bg-surface border border-borderWarm rounded-2xl p-4 shadow-calm space-y-3">
-              <div class="grid grid-cols-2 gap-2.5">
-                <button
-                  onclick="markFlashcard('${card.id}', 'known')"
-                  class="py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold border transition-colors min-h-[48px] inline-flex items-center justify-center gap-2 ${
-                    state.flashcardStatus[card.id] === 'known'
-                      ? 'bg-success text-surface border-success'
-                      : 'bg-successSoft text-success border-success/25 hover:bg-success hover:text-surface'
-                  }"
-                >
-                  <i class="ph ph-check-circle text-base"></i>
-                  <span>حفظتها جيدًا</span>
-                </button>
-                <button
-                  onclick="markFlashcard('${card.id}', 'review')"
-                  class="py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold border transition-colors min-h-[48px] inline-flex items-center justify-center gap-2 ${
-                    state.flashcardStatus[card.id] === 'review'
-                      ? 'bg-amberAccent text-surface border-amberAccent'
-                      : 'bg-amberSoft text-amberAccent border-amberAccent/25 hover:bg-amberAccent hover:text-surface'
-                  }"
-                >
-                  <i class="ph ph-clock-counter-clockwise text-base"></i>
-                  <span>للمراجعة لاحقًا</span>
-                </button>
-              </div>
-
-              <div class="flex items-center justify-between pt-2 border-t border-borderWarm/70">
-                <button onclick="stepFlashcard(-1)" class="px-4 py-2 rounded-xl bg-paper border border-borderWarm text-xs font-semibold text-ink hover:border-accent/40 min-h-[40px] inline-flex items-center gap-1.5">
-                  <i class="ph ph-arrow-right"></i>
-                  <span>السابقة</span>
-                </button>
-                <span class="text-xs text-slateCalm">بطاقة ${uiState.flashcardIndex + 1} من ${cards.length}</span>
-                <button onclick="stepFlashcard(1)" class="px-4 py-2 rounded-xl bg-paper border border-borderWarm text-xs font-semibold text-ink hover:border-accent/40 min-h-[40px] inline-flex items-center gap-1.5">
-                  <span>التالية</span>
-                  <i class="ph ph-arrow-left"></i>
-                </button>
-              </div>
-            </div>
-          `}
+          ` : (uiState.flashcardMode === 'flip' ? renderDeckFlipMode(cards, masteredPct) : renderColoredGridMode(cards))}
         </div>
       `;
+    }
+
+    /* ==================== MODE A: PHYSICAL 3D STACKED DECK MODE ==================== */
+    function renderDeckFlipMode(cards, masteredPct) {
+      const card = cards[uiState.flashcardIndex];
+      const theme = FLASHCARD_THEMES[card.theme] || FLASHCARD_THEMES.synonym;
+      const cardStatus = state.flashcardStatus[card.id];
+
+      // Peeking background layers use the pastel colors of the upcoming cards
+      const nextCard1 = cards.length > 1 ? cards[(uiState.flashcardIndex + 1) % cards.length] : null;
+      const nextCard2 = cards.length > 2 ? cards[(uiState.flashcardIndex + 2) % cards.length] : null;
+      const nextTheme1 = nextCard1 ? (FLASHCARD_THEMES[nextCard1.theme] || theme) : theme;
+      const nextTheme2 = nextCard2 ? (FLASHCARD_THEMES[nextCard2.theme] || theme) : theme;
+
+      const statusBadgeHtml = cardStatus === 'known'
+        ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-successSoft text-success border border-success/25 text-[11px] font-bold"><i class="ph ph-check-circle text-xs"></i> محفوظة</span>`
+        : cardStatus === 'review'
+          ? `<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amberSoft text-amberAccent border border-amberAccent/30 text-[11px] font-bold"><i class="ph ph-clock-counter-clockwise text-xs"></i> للمراجعة</span>`
+          : '';
+
+      const enterAnimClass = uiState.deckEnterAnim || '';
+      uiState.deckEnterAnim = '';
+
+      return `
+        <div class="space-y-6">
+          <!-- Stacked Physical 3D Deck Container (Touch Swipeable) -->
+          <div
+            id="deck-stack-wrapper"
+            class="relative pb-6 pl-4 sm:pl-6"
+            ontouchstart="handleDeckTouchStart(event)"
+            ontouchend="handleDeckTouchEnd(event)"
+          >
+            <!-- Stacked Card Layer 2 -->
+            ${nextCard2 ? `
+              <div
+                id="deck-stack-2"
+                class="deck-stack-layer deck-stack-2 shadow-calm"
+                style="background-color: ${nextTheme2.bg}; border: 1.5px solid ${nextTheme2.border}; opacity: 0.78;"
+              ></div>
+            ` : ''}
+
+            <!-- Stacked Card Layer 1 -->
+            ${nextCard1 ? `
+              <div
+                id="deck-stack-1"
+                class="deck-stack-layer deck-stack-1 shadow-calm"
+                style="background-color: ${nextTheme1.bg}; border: 1.5px solid ${nextTheme1.border}; opacity: 0.94;"
+              ></div>
+            ` : ''}
+
+            <!-- Active 3D Flip Stage -->
+            <div id="deck-active-stage" class="deck-stage-active flip-scene ${enterAnimClass}">
+              <div id="deck-flip-lift" class="flip-lift-wrap">
+                <div
+                  id="deck-flip-card"
+                  onclick="flipCurrentCard()"
+                  role="button"
+                  tabindex="0"
+                  aria-label="اضغط لقلب البطاقة وعرض الإجابة"
+                  class="flip-card shadow-calm ${uiState.flashcardFlipped ? 'is-flipped' : ''}"
+                >
+                  <!-- FRONT FACE -->
+                  <div
+                    class="flip-face flip-front flex flex-col justify-between"
+                    style="background-color: ${theme.bg}; border: 2px solid ${theme.border};"
+                  >
+                    <!-- Colored Top Accent Strip -->
+                    <div class="h-1.5 w-full shrink-0" style="background-color: ${theme.accent};"></div>
+
+                    <!-- Subtle Moroccan Geometric Watermark Inside Card -->
+                    ${buildMoroccanWatermarkSvg(`deck-front-geo-${card.id}`, theme.accent, '0.055')}
+                    ${buildMoroccanCornerStar(theme.accent, 'bottom-3 left-3', '0.11')}
+
+                    <div class="relative z-10 p-5 sm:p-6 flex-1 flex flex-col justify-between gap-4">
+                      <!-- Top Row -->
+                      <div class="flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex items-center gap-2">
+                          <span
+                            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold text-surface"
+                            style="background-color: ${theme.accent};"
+                          >
+                            <i class="ph ${theme.icon} text-sm"></i>
+                            <span>${theme.label}</span>
+                          </span>
+                          ${statusBadgeHtml}
+                        </div>
+
+                        <span
+                          class="text-xs font-bold px-2.5 py-1 rounded-lg bg-surface tabular-nums"
+                          style="border: 1px solid ${theme.border}; color: ${theme.darkText};"
+                        >
+                          ${toArabicDigits(uiState.flashcardIndex + 1)} / ${toArabicDigits(cards.length)}
+                        </span>
+                      </div>
+
+                      <!-- Centerpiece Term in Maghrebi Calligraphic Font -->
+                      <div class="text-center py-4 sm:py-5 space-y-2.5">
+                        <div class="font-heading text-3xl sm:text-4xl font-bold text-ink leading-snug px-2">
+                          ${card.front}
+                        </div>
+                        ${buildAndalusianDivider(theme.accent)}
+                        <div
+                          class="inline-flex items-center gap-1.5 text-xs font-semibold bg-surface/95 rounded-full px-3.5 py-1.5"
+                          style="border: 1px solid ${theme.border}; color: ${theme.darkText};"
+                        >
+                          <i class="ph ph-book-bookmark text-xs" style="color: ${theme.accent};"></i>
+                          <span>${card.subtitle}</span>
+                        </div>
+                      </div>
+
+                      <!-- Tap-to-Flip Cue -->
+                      <div
+                        class="rounded-xl py-2.5 px-4 text-center text-xs font-bold flex items-center justify-center gap-2 bg-surface/95"
+                        style="border: 1px solid ${theme.border}; color: ${theme.accent};"
+                      >
+                        <i class="ph ph-arrows-clockwise text-sm"></i>
+                        <span>اضغط لقلب البطاقة وعرض الإجابة</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- BACK FACE -->
+                  <div
+                    class="flip-face flip-back flex flex-col justify-between"
+                    style="background-color: ${theme.backBg}; border: 2px solid ${theme.accent};"
+                  >
+                    <!-- Colored Header Band -->
+                    <div
+                      class="px-5 py-3 flex flex-wrap items-center justify-between gap-2 text-surface shrink-0"
+                      style="background-color: ${theme.accent};"
+                    >
+                      <span class="inline-flex items-center gap-1.5 text-xs font-bold">
+                        <i class="ph ph-seal-check text-base"></i>
+                        <span>الإجابة النموذجية — ${theme.label}</span>
+                      </span>
+                      <span class="text-[11px] font-medium opacity-95">${card.subtitle}</span>
+                    </div>
+
+                    ${buildMoroccanWatermarkSvg(`deck-back-geo-${card.id}`, theme.accent, '0.045')}
+
+                    <div class="relative z-10 p-5 sm:p-6 flex-1 flex flex-col justify-between gap-4">
+                      <!-- Crisp Answer Plaque -->
+                      <div
+                        class="bg-surface rounded-2xl p-5 text-center shadow-calm my-auto"
+                        style="border: 1.5px solid ${theme.border};"
+                      >
+                        <div class="text-xs font-semibold mb-1.5" style="color: ${theme.darkText};">${card.front}</div>
+                        <div class="font-serifAr text-2xl sm:text-3xl font-bold text-ink leading-relaxed">
+                          ${card.back}
+                        </div>
+                      </div>
+
+                      <!-- Contextual Note -->
+                      <div
+                        class="bg-surface/95 rounded-xl p-3.5 text-right flex items-start gap-2.5"
+                        style="border: 1px solid ${theme.border}; border-right: 4px solid ${theme.accent};"
+                      >
+                        <i class="ph ph-info text-base mt-0.5 shrink-0" style="color: ${theme.accent};"></i>
+                        <div class="space-y-0.5">
+                          <span class="text-[11px] font-bold block" style="color: ${theme.darkText};">التوضيح والسياق</span>
+                          <p class="text-xs sm:text-sm text-bodyInk leading-relaxed">${card.note}</p>
+                        </div>
+                      </div>
+
+                      <!-- Flip Back Hint -->
+                      <div class="text-center text-[11px] font-semibold flex items-center justify-center gap-1.5" style="color: ${theme.darkText};">
+                        <i class="ph ph-arrow-u-up-left text-xs"></i>
+                        <span>اضغط للعودة إلى وجه البطاقة</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls Card: Self-Evaluation, Navigation, Shuffle, Progress Bar & Colored Dots -->
+          <div class="bg-surface border border-borderWarm rounded-2xl p-4 shadow-calm space-y-4">
+            <!-- Self Assessment Buttons -->
+            <div class="grid grid-cols-2 gap-2.5">
+              <button
+                onclick="markFlashcard('${card.id}', 'known')"
+                class="py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold border transition-colors min-h-[48px] inline-flex items-center justify-center gap-2 ${
+                  cardStatus === 'known'
+                    ? 'bg-success text-surface border-success'
+                    : 'bg-successSoft text-success border-success/25 hover:bg-success hover:text-surface'
+                }"
+              >
+                <i class="ph ph-check-circle text-base"></i>
+                <span>حفظتها جيدًا</span>
+              </button>
+              <button
+                onclick="markFlashcard('${card.id}', 'review')"
+                class="py-3 px-4 rounded-xl text-xs sm:text-sm font-semibold border transition-colors min-h-[48px] inline-flex items-center justify-center gap-2 ${
+                  cardStatus === 'review'
+                    ? 'bg-amberAccent text-surface border-amberAccent'
+                    : 'bg-amberSoft text-amberAccent border-amberAccent/30 hover:bg-amberAccent hover:text-surface'
+                }"
+              >
+                <i class="ph ph-clock-counter-clockwise text-base"></i>
+                <span>للمراجعة لاحقًا</span>
+              </button>
+            </div>
+
+            <!-- Previous / Shuffle / Next Row -->
+            <div class="flex items-center justify-between gap-2 pt-3 border-t border-borderWarm/70">
+              <button
+                onclick="stepFlashcard(-1)"
+                class="px-4 py-2.5 rounded-xl bg-paper border border-borderWarm text-xs font-semibold text-ink hover:border-accent/40 min-h-[44px] inline-flex items-center gap-1.5"
+              >
+                <i class="ph ph-arrow-right text-sm"></i>
+                <span>السابقة</span>
+              </button>
+
+              <button
+                onclick="shuffleFlashcards()"
+                class="px-3.5 py-2.5 rounded-xl bg-paper border border-borderWarm text-xs font-semibold text-slateCalm hover:text-accent hover:border-accent/40 min-h-[44px] inline-flex items-center gap-1.5 transition-colors"
+                title="خلط ترتيب البطاقات"
+              >
+                <i class="ph ph-shuffle text-sm"></i>
+                <span>خلط البطاقات</span>
+              </button>
+
+              <button
+                onclick="stepFlashcard(1)"
+                class="px-4 py-2.5 rounded-xl bg-paper border border-borderWarm text-xs font-semibold text-ink hover:border-accent/40 min-h-[44px] inline-flex items-center gap-1.5"
+              >
+                <span>التالية</span>
+                <i class="ph ph-arrow-left text-sm"></i>
+              </button>
+            </div>
+
+            <!-- Progress Bar & Clickable Color-Coded Pagination Dots -->
+            <div class="pt-2 space-y-2.5">
+              <div class="flex items-center justify-between text-[11px] text-slateCalm">
+                <span>تقدم الإتقان الكلي</span>
+                <span class="font-bold tabular-nums" style="color: ${theme.accent};">${masteredPct}%</span>
+              </div>
+              <div class="w-full h-1.5 bg-borderWarm/70 rounded-full overflow-hidden">
+                <div class="h-full rounded-full transition-all duration-300" style="width: ${masteredPct}%; background-color: ${theme.accent};"></div>
+              </div>
+
+              <!-- Clickable Color-Coded Dots -->
+              <div class="flex flex-wrap items-center justify-center gap-1.5 pt-1" role="tablist" aria-label="الانتقال السريع بين البطاقات">
+                ${cards.map((c, idx) => {
+                  const cTheme = FLASHCARD_THEMES[c.theme] || FLASHCARD_THEMES.synonym;
+                  const isCurrent = idx === uiState.flashcardIndex;
+                  const cStatus = state.flashcardStatus[c.id];
+                  const dotColor = cStatus === 'known' ? '#15803D' : cTheme.accent;
+                  return `
+                    <button
+                      onclick="jumpToFlashcard(${idx})"
+                      aria-label="الانتقال إلى البطاقة ${idx + 1}"
+                      title="${c.front}"
+                      class="rounded-full transition-all"
+                      style="
+                        width: ${isCurrent ? '24px' : '10px'};
+                        height: 10px;
+                        background-color: ${dotColor};
+                        opacity: ${isCurrent ? '1' : cStatus === 'known' ? '0.88' : '0.34'};
+                        box-shadow: ${cStatus === 'review' ? '0 0 0 2px #FAF7F0, 0 0 0 3.5px #B45309' : 'none'};
+                      "
+                    ></button>
+                  `;
+                }).join('')}
+              </div>
+
+              <p class="text-[11px] text-center text-slateCalm hidden sm:block pt-0.5">
+                اختصارات لوحة المفاتيح: المسافة لقلب البطاقة • الأسهم للتنقل يمينًا ويسارًا
+              </p>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    /* ==================== MODE B: COLORFUL 3D FLIP GRID VIEW ==================== */
+    function renderColoredGridMode(cards) {
+      return `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          ${cards.map((card, idx) => {
+            const theme = FLASHCARD_THEMES[card.theme] || FLASHCARD_THEMES.synonym;
+            const isFlipped = !!uiState.flippedGridCards[card.id];
+            const cardStatus = state.flashcardStatus[card.id];
+
+            return `
+              <div class="flip-scene">
+                <div id="grid-flip-lift-${card.id}" class="flip-lift-wrap">
+                  <article
+                    id="grid-flip-card-${card.id}"
+                    onclick="flipGridCard('${card.id}')"
+                    role="button"
+                    tabindex="0"
+                    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flipGridCard('${card.id}');}"
+                    aria-label="اضغط لقلب بطاقة ${card.front}"
+                    class="flip-card grid-flip-card shadow-calm hover:shadow-calmHover ${isFlipped ? 'is-flipped' : ''}"
+                  >
+                    <!-- GRID CARD FRONT FACE -->
+                    <div
+                      class="flip-face flip-front flex flex-col justify-between"
+                      style="background-color: ${theme.bg}; border: 1.5px solid ${theme.border};"
+                    >
+                      <!-- Colored Top Strip -->
+                      <div class="h-1.5 w-full shrink-0" style="background-color: ${theme.accent};"></div>
+                      ${buildMoroccanCornerStar(theme.accent, 'bottom-2 left-2', '0.10')}
+
+                      <div class="relative z-10 p-4 flex-1 flex flex-col justify-between gap-3">
+                        <div class="flex items-center justify-between gap-2">
+                          <span
+                            class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold text-surface"
+                            style="background-color: ${theme.accent};"
+                          >
+                            <i class="ph ${theme.icon} text-xs"></i>
+                            <span>${theme.label}</span>
+                          </span>
+                          <div class="flex items-center gap-1.5">
+                            <span id="grid-status-badge-${card.id}">
+                              ${renderGridStatusIcon(cardStatus)}
+                            </span>
+                            <span
+                              class="text-[11px] font-bold px-2 py-0.5 rounded-md bg-surface"
+                              style="border: 1px solid ${theme.border}; color: ${theme.darkText};"
+                            >
+                              ${toArabicDigits(idx + 1)}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="text-center py-3 space-y-1.5">
+                          <h3 class="font-heading text-xl font-bold text-ink leading-snug">${card.front}</h3>
+                          <div class="text-[11px] font-medium" style="color: ${theme.darkText};">${card.subtitle}</div>
+                        </div>
+
+                        <div
+                          class="rounded-xl py-2 px-3 bg-surface/95 flex items-center justify-center gap-1.5 text-xs font-bold"
+                          style="border: 1px solid ${theme.border}; color: ${theme.accent};"
+                        >
+                          <i class="ph ph-arrows-clockwise text-sm"></i>
+                          <span>اضغط لقلب البطاقة</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- GRID CARD BACK FACE -->
+                    <div
+                      class="flip-face flip-back flex flex-col justify-between"
+                      style="background-color: ${theme.backBg}; border: 2px solid ${theme.accent};"
+                    >
+                      <!-- Solid Header Strip -->
+                      <div
+                        class="px-4 py-2 flex items-center justify-between gap-2 text-surface shrink-0"
+                        style="background-color: ${theme.accent};"
+                      >
+                        <span class="text-[11px] font-bold inline-flex items-center gap-1">
+                          <i class="ph ph-seal-check text-xs"></i>
+                          <span>${theme.label}</span>
+                        </span>
+                        <span class="text-[10px] opacity-95">اضغط للعودة</span>
+                      </div>
+
+                      <div class="relative z-10 p-3.5 flex-1 flex flex-col justify-between gap-2.5">
+                        <!-- White Answer Plaque -->
+                        <div class="bg-surface rounded-xl p-3 text-center" style="border: 1px solid ${theme.border};">
+                          <div class="font-serifAr text-lg font-bold text-ink leading-relaxed">${card.back}</div>
+                        </div>
+
+                        <!-- Note Box -->
+                        <p
+                          class="text-xs text-bodyInk leading-relaxed bg-surface/90 rounded-lg p-2.5"
+                          style="border: 1px solid ${theme.border}; border-right: 3px solid ${theme.accent};"
+                        >
+                          ${card.note}
+                        </p>
+
+                        <!-- Quick Status Buttons -->
+                        <div class="grid grid-cols-2 gap-2 pt-0.5" onclick="event.stopPropagation()">
+                          <button
+                            id="grid-btn-known-${card.id}"
+                            onclick="markGridFlashcard('${card.id}', 'known')"
+                            class="py-2 px-2 rounded-xl text-xs font-semibold border transition-colors min-h-[38px] inline-flex items-center justify-center gap-1 ${
+                              cardStatus === 'known'
+                                ? 'bg-success text-surface border-success'
+                                : 'bg-surface text-success border-success/30 hover:bg-successSoft'
+                            }"
+                          >
+                            <i class="ph ph-check text-xs"></i>
+                            <span>حفظتها</span>
+                          </button>
+                          <button
+                            id="grid-btn-review-${card.id}"
+                            onclick="markGridFlashcard('${card.id}', 'review')"
+                            class="py-2 px-2 rounded-xl text-xs font-semibold border transition-colors min-h-[38px] inline-flex items-center justify-center gap-1 ${
+                              cardStatus === 'review'
+                                ? 'bg-amberAccent text-surface border-amberAccent'
+                                : 'bg-surface text-amberAccent border-amberAccent/35 hover:bg-amberSoft'
+                            }"
+                          >
+                            <i class="ph ph-clock-counter-clockwise text-xs"></i>
+                            <span>للمراجعة</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+    }
+
+    function renderGridStatusIcon(cardStatus) {
+      if (cardStatus === 'known') {
+        return `<span class="w-6 h-6 rounded-full bg-successSoft text-success border border-success/25 inline-flex items-center justify-center" title="محفوظة"><i class="ph ph-check text-xs"></i></span>`;
+      }
+      if (cardStatus === 'review') {
+        return `<span class="w-6 h-6 rounded-full bg-amberSoft text-amberAccent border border-amberAccent/30 inline-flex items-center justify-center" title="للمراجعة"><i class="ph ph-clock-counter-clockwise text-xs"></i></span>`;
+      }
+      return '';
     }
 
     function renderBookmarksPanel(savedIds) {
@@ -2661,7 +3530,7 @@
             <div class="w-12 h-12 mx-auto rounded-2xl bg-amberSoft text-amberAccent flex items-center justify-center">
               <i class="ph ph-bookmark-simple text-2xl"></i>
             </div>
-            <h3 class="font-heading text-lg font-bold text-ink">لا توجد أسئلة محفوظة حاليًا</h3>
+            <h3 class="font-heading text-2xl font-bold text-ink">لا توجد أسئلة محفوظة حاليًا</h3>
             <p class="text-xs sm:text-sm text-slateCalm max-w-md mx-auto leading-relaxed">
               أثناء المذاكرة داخل المحطات، يمكنك الضغط على أيقونة الحفظ أو اختيار «أحتاج مراجعتها» في الأسئلة المقالية لتظهر هنا تلقائيًا.
             </p>
@@ -2681,7 +3550,7 @@
               <div class="flex items-start justify-between gap-2">
                 <div>
                   <span class="inline-block px-2.5 py-0.5 rounded-md bg-accentSoft text-accent text-[11px] font-semibold mb-1">
-                    المحطة ${q.stationId}: ${q.stationTitle}
+                    المحطة ${toArabicDigits(q.stationId)}: ${q.stationTitle}
                   </span>
                   <h3 class="text-sm sm:text-base font-bold text-ink leading-relaxed">${q.prompt}</h3>
                 </div>
@@ -2693,7 +3562,7 @@
                   <p class="text-slateCalm leading-relaxed">${q.explanation}</p>
                 ` : `
                   <div class="font-bold text-accent">الإجابة النموذجية:</div>
-                  <p class="text-ink leading-relaxed">${q.modelAnswer}</p>
+                  <p class="text-bodyInk leading-relaxed">${q.modelAnswer}</p>
                 `}
               </div>
 
@@ -2719,42 +3588,256 @@
       `;
     }
 
+    /* ==================== FLASHCARD DOM-NATIVE 3D FLIP INTERACTIONS ==================== */
     function setReviewSubTab(tab) {
       uiState.reviewSubTab = tab;
       renderApp();
     }
 
-    function setFlashcardFilter(filter) {
-      uiState.flashcardFilter = filter;
+    function setFlashcardMode(mode) {
+      uiState.flashcardMode = mode;
+      renderApp();
+    }
+
+    function setFlashcardFilter(filterKey) {
+      uiState.flashcardFilter = filterKey;
       uiState.flashcardIndex = 0;
       uiState.flashcardFlipped = false;
       renderApp();
     }
 
+    /* Direct DOM toggle for Deck Card so 3D flip + sheen sweep animate seamlessly */
     function flipCurrentCard() {
+      if (uiState.justSwiped || uiState.deckTransitionLock) return;
       uiState.flashcardFlipped = !uiState.flashcardFlipped;
+      playFlipSound();
+
+      const cardEl = document.getElementById('deck-flip-card');
+      const liftEl = document.getElementById('deck-flip-lift');
+      const stackWrapper = document.getElementById('deck-stack-wrapper');
+
+      if (cardEl) {
+        cardEl.classList.toggle('is-flipped', uiState.flashcardFlipped);
+      }
+      if (liftEl) {
+        liftEl.classList.remove('is-lifting');
+        void liftEl.offsetWidth;
+        liftEl.classList.add('is-lifting');
+      }
+      if (stackWrapper) {
+        stackWrapper.classList.add('deck-nudge');
+        clearTimeout(stackWrapper._nudgeTimer);
+        stackWrapper._nudgeTimer = setTimeout(() => {
+          stackWrapper.classList.remove('deck-nudge');
+        }, 420);
+      }
+    }
+
+    /* Directional Slide Transition for Next / Previous Card */
+    function stepFlashcard(delta) {
+      const cards = getFilteredFlashcards();
+      if (cards.length <= 1 || uiState.deckTransitionLock) return;
+
+      uiState.deckTransitionLock = true;
+      playFlipSound();
+
+      const stage = document.getElementById('deck-active-stage');
+      const outClass = delta > 0 ? 'anim-slide-out-next' : 'anim-slide-out-prev';
+      const inClass = delta > 0 ? 'anim-slide-in-next' : 'anim-slide-in-prev';
+
+      if (stage) {
+        stage.classList.add(outClass);
+        setTimeout(() => {
+          uiState.flashcardIndex = (uiState.flashcardIndex + delta + cards.length) % cards.length;
+          uiState.flashcardFlipped = false;
+          uiState.deckEnterAnim = inClass;
+          uiState.deckTransitionLock = false;
+          renderApp();
+        }, 165);
+      } else {
+        uiState.flashcardIndex = (uiState.flashcardIndex + delta + cards.length) % cards.length;
+        uiState.flashcardFlipped = false;
+        uiState.deckTransitionLock = false;
+        renderApp();
+      }
+    }
+
+    function jumpToFlashcard(idx) {
+      if (idx === uiState.flashcardIndex || uiState.deckTransitionLock) return;
+      const delta = idx > uiState.flashcardIndex ? 1 : -1;
+      uiState.deckEnterAnim = delta > 0 ? 'anim-slide-in-next' : 'anim-slide-in-prev';
+      uiState.flashcardIndex = idx;
+      uiState.flashcardFlipped = false;
+      playFlipSound();
       renderApp();
     }
 
-    function stepFlashcard(delta) {
-      const cards = getFilteredFlashcards();
-      if (cards.length === 0) return;
-      uiState.flashcardIndex = (uiState.flashcardIndex + delta + cards.length) % cards.length;
+    function shuffleFlashcards() {
+      const arr = [...uiState.flashcardOrder];
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      uiState.flashcardOrder = arr;
+      uiState.flashcardIndex = 0;
       uiState.flashcardFlipped = false;
+      uiState.deckEnterAnim = 'anim-slide-in-next';
+      playFlipSound();
       renderApp();
+      showToast('تم خلط ترتيب البطاقات بنجاح', 'ph-shuffle');
     }
 
     function markFlashcard(cardId, status) {
       state.flashcardStatus[cardId] = status;
       if (status === 'known') playCorrectSound();
+      else playFlipSound();
       saveState();
+
       const cards = getFilteredFlashcards();
       if (cards.length > 0) {
         uiState.flashcardIndex = (uiState.flashcardIndex + 1) % cards.length;
       }
       uiState.flashcardFlipped = false;
+      uiState.deckEnterAnim = 'anim-slide-in-next';
       renderApp();
     }
+
+    /* Direct DOM toggle for Individual Grid Card so 3D flip plays smoothly */
+    function flipGridCard(cardId) {
+      uiState.flippedGridCards[cardId] = !uiState.flippedGridCards[cardId];
+      playFlipSound();
+
+      const cardEl = document.getElementById(`grid-flip-card-${cardId}`);
+      const liftEl = document.getElementById(`grid-flip-lift-${cardId}`);
+      if (cardEl) {
+        cardEl.classList.toggle('is-flipped', uiState.flippedGridCards[cardId]);
+      }
+      if (liftEl) {
+        liftEl.classList.remove('is-lifting');
+        void liftEl.offsetWidth;
+        liftEl.classList.add('is-lifting');
+      }
+
+      const btn = document.getElementById('grid-flip-all-btn');
+      if (btn) {
+        const allFlipped = areAllGridCardsFlipped(getFilteredFlashcards());
+        btn.innerHTML = `<i class="ph ph-arrows-clockwise text-sm"></i><span>${allFlipped ? 'إعادة كل البطاقات' : 'قلب كل البطاقات'}</span>`;
+      }
+    }
+
+    function areAllGridCardsFlipped(cards) {
+      return cards.length > 0 && cards.every(c => !!uiState.flippedGridCards[c.id]);
+    }
+
+    function toggleAllGridCards() {
+      const cards = getFilteredFlashcards();
+      const shouldUnflip = areAllGridCardsFlipped(cards);
+      playFlipSound();
+
+      cards.forEach((c, idx) => {
+        uiState.flippedGridCards[c.id] = !shouldUnflip;
+        const cardEl = document.getElementById(`grid-flip-card-${c.id}`);
+        if (cardEl) {
+          setTimeout(() => {
+            cardEl.classList.toggle('is-flipped', !shouldUnflip);
+          }, Math.min(idx * 25, 220));
+        }
+      });
+
+      const btn = document.getElementById('grid-flip-all-btn');
+      if (btn) {
+        btn.innerHTML = `<i class="ph ph-arrows-clockwise text-sm"></i><span>${!shouldUnflip ? 'إعادة كل البطاقات' : 'قلب كل البطاقات'}</span>`;
+      }
+    }
+
+    function markGridFlashcard(cardId, status) {
+      state.flashcardStatus[cardId] = status;
+      if (status === 'known') {
+        playCorrectSound();
+        showToast('أحسنت — تم حفظ البطاقة', 'ph-check-circle');
+      } else {
+        showToast('أضيفت البطاقة لقائمة المراجعة', 'ph-clock-counter-clockwise');
+      }
+      saveState();
+
+      if (uiState.flashcardFilter === 'review') {
+        renderApp();
+        return;
+      }
+
+      const badgeEl = document.getElementById(`grid-status-badge-${cardId}`);
+      if (badgeEl) badgeEl.innerHTML = renderGridStatusIcon(status);
+
+      const knownBtn = document.getElementById(`grid-btn-known-${cardId}`);
+      const reviewBtn = document.getElementById(`grid-btn-review-${cardId}`);
+      if (knownBtn) {
+        knownBtn.className = `py-2 px-2 rounded-xl text-xs font-semibold border transition-colors min-h-[38px] inline-flex items-center justify-center gap-1 ${
+          status === 'known'
+            ? 'bg-success text-surface border-success'
+            : 'bg-surface text-success border-success/30 hover:bg-successSoft'
+        }`;
+      }
+      if (reviewBtn) {
+        reviewBtn.className = `py-2 px-2 rounded-xl text-xs font-semibold border transition-colors min-h-[38px] inline-flex items-center justify-center gap-1 ${
+          status === 'review'
+            ? 'bg-amberAccent text-surface border-amberAccent'
+            : 'bg-surface text-amberAccent border-amberAccent/35 hover:bg-amberSoft'
+        }`;
+      }
+
+      const summaryEl = document.getElementById('fc-mastery-summary');
+      if (summaryEl) {
+        const knownCount = FLASHCARDS.filter(c => state.flashcardStatus[c.id] === 'known').length;
+        const reviewCount = FLASHCARDS.filter(c => state.flashcardStatus[c.id] === 'review').length;
+        summaryEl.innerHTML = `حفظت <strong class="text-success">${toArabicDigits(knownCount)}</strong> من ${toArabicDigits(FLASHCARDS.length)} بطاقة${
+          reviewCount > 0 ? ` • <strong class="text-amberAccent">${toArabicDigits(reviewCount)}</strong> للمراجعة` : ''
+        }`;
+      }
+    }
+
+    /* Touch Swipe Support for Mobile Deck */
+    function handleDeckTouchStart(e) {
+      if (!e.touches || e.touches.length !== 1) return;
+      uiState.touchStartX = e.touches[0].clientX;
+      uiState.touchStartY = e.touches[0].clientY;
+    }
+
+    function handleDeckTouchEnd(e) {
+      if (!e.changedTouches || e.changedTouches.length !== 1) return;
+      const dx = e.changedTouches[0].clientX - uiState.touchStartX;
+      const dy = e.changedTouches[0].clientY - uiState.touchStartY;
+
+      if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.25) {
+        uiState.justSwiped = true;
+        setTimeout(() => { uiState.justSwiped = false; }, 260);
+        if (dx < 0) stepFlashcard(1);
+        else stepFlashcard(-1);
+      }
+    }
+
+    /* Keyboard Shortcuts for Flashcards Deck */
+    document.addEventListener('keydown', (e) => {
+      const tag = e.target && e.target.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+
+      const isDeckActive =
+        state.currentView === 'review' &&
+        uiState.reviewSubTab === 'flashcards' &&
+        uiState.flashcardMode === 'flip';
+
+      if (!isDeckActive) return;
+
+      if (e.key === ' ' || (e.key === 'Enter' && tag !== 'BUTTON')) {
+        e.preventDefault();
+        flipCurrentCard();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        stepFlashcard(1);
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        stepFlashcard(-1);
+      }
+    });
 
     function removeSavedQuestion(qId) {
       state.bookmarks = state.bookmarks.filter(id => id !== qId);
